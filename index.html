@@ -328,11 +328,11 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-wrap gap-4 items-center justify-between">
                     <div class="flex flex-wrap gap-2">
-                        <button onclick="filterByExperience('plumbers', 'all')" class="filter-btn active px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">All Experience</button>
-                        <button onclick="filterByExperience('plumbers', '0-2')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">0-2 Years</button>
-                        <button onclick="filterByExperience('plumbers', '3-5')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">3-5 Years</button>
-                        <button onclick="filterByExperience('plumbers', '6-10')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">6-10 Years</button>
-                        <button onclick="filterByExperience('plumbers', '10+')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">10+ Years</button>
+                        <button type="button" onclick="filterByExperience('plumbers', 'all')" class="filter-btn active px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">All Experience</button>
+                        <button type="button" onclick="filterByExperience('plumbers', '0-2')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">0-2 Years</button>
+                        <button type="button" onclick="filterByExperience('plumbers', '3-5')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">3-5 Years</button>
+                        <button type="button" onclick="filterByExperience('plumbers', '6-10')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">6-10 Years</button>
+                        <button type="button" onclick="filterByExperience('plumbers', '10+')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">10+ Years</button>
                     </div>
                     <div class="flex items-center space-x-4">
                         <select id="plumbersLocationFilter" onchange="filterByLocation('plumbers')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
@@ -981,7 +981,7 @@
                 </div>
                 <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">Login</button>
             </form>
-            <p class="text-center mt-4 text-gray-600">Don't have an account? <button onclick="hideLoginModal(); showSignupModal();" class="text-blue-600 hover:underline">Sign up</button></p>
+            <p class="text-center mt-4 text-gray-600">Don't have an account? <button type="button" onclick="hideLoginModal(); showSignupModal();" class="text-blue-600 hover:underline">Sign up</button></p>
         </div>
     </div>
 
@@ -1019,7 +1019,7 @@
                 </div>
                 <button type="submit" class="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition-colors font-semibold">Sign Up</button>
             </form>
-            <p class="text-center mt-4 text-gray-600">Already have an account? <button onclick="hideSignupModal(); showLoginModal();" class="text-blue-600 hover:underline">Login</button></p>
+            <p class="text-center mt-4 text-gray-600">Already have an account? <button type="button" onclick="hideSignupModal(); showLoginModal();" class="text-blue-600 hover:underline">Login</button></p>
         </div>
     </div>
 
@@ -1293,5 +1293,5 @@
             showPage('home');
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97335a5935be9cd7',t:'MTc1NTg3NjAxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97336e0db24f22a8',t:'MTc1NTg3NjgyMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
