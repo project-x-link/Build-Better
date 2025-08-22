@@ -1,0 +1,1972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Better - Complete Construction Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+        }
+        .dark-section {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .service-icon {
+            transition: transform 0.3s ease;
+        }
+        .service-icon:hover {
+            transform: scale(1.1);
+        }
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active {
+            background-color: #2563eb;
+            color: white;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .nav-link {
+            cursor: pointer;
+        }
+        .nav-link.active {
+            color: #60a5fa !important;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1f2937;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+        }
+        .dropdown-content a {
+            color: #d1d5db;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-radius: 4px;
+            margin: 4px;
+        }
+        .dropdown-content a:hover {
+            background-color: #374151;
+            color: #60a5fa;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-gray-900 shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div onclick="showPage('home')" class="text-2xl font-bold text-blue-400 cursor-pointer">🏗️ Build Better</div>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a onclick="showPage('home')" class="nav-link text-gray-300 hover:text-blue-400 transition-colors">Home</a>
+                    
+                    <div class="dropdown">
+                        <a class="nav-link text-gray-300 hover:text-blue-400 transition-colors cursor-pointer">Services ▼</a>
+                        <div class="dropdown-content">
+                            <a onclick="showPage('plumbers')">🔧 Plumbers</a>
+                            <a onclick="showPage('electricians')">⚡ Electricians</a>
+                            <a onclick="showPage('contractors')">🏗️ Contractors</a>
+                            <a onclick="showPage('civilengineers')">👨‍💼 Civil Engineers</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown">
+                        <a class="nav-link text-gray-300 hover:text-blue-400 transition-colors cursor-pointer">Labor ▼</a>
+                        <div class="dropdown-content">
+                            <a onclick="showPage('skilledlabor')">👷‍♂️ Skilled Labor</a>
+                            <a onclick="showPage('unskilledlabor')">👷 Unskilled Labor</a>
+                            <a onclick="showPage('painters')">🎨 Painters</a>
+                            <a onclick="showPage('carpenters')">🔨 Carpenters</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown">
+                        <a class="nav-link text-gray-300 hover:text-blue-400 transition-colors cursor-pointer">Equipment ▼</a>
+                        <div class="dropdown-content">
+                            <a onclick="showPage('machinery')">🚜 Machinery Operators</a>
+                            <a onclick="showPage('workshops')">🔧 Workshops</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <button onclick="showLoginModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Login</button>
+                    <button onclick="showSignupModal()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero-gradient text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-5xl font-bold mb-6">Complete Construction Ecosystem</h1>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">From skilled professionals to heavy machinery - find everything you need for your construction project in one place!</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('services')" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Explore Services</button>
+                    <button onclick="scrollToSection('join')" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">Join as Professional</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 dark-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-white mb-12">Complete Construction Services</h2>
+                
+                <!-- Professional Services -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-white mb-6">🏗️ Professional Services</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div onclick="showPage('plumbers')" class="text-center p-6 bg-gray-800 rounded-xl card-hover border border-gray-700 cursor-pointer">
+                            <div class="service-icon text-5xl mb-3">🔧</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Plumbers</h4>
+                            <p class="text-gray-300 text-sm">Water supply, drainage, pipe repairs</p>
+                        </div>
+                        <div onclick="showPage('electricians')" class="text-center p-6 bg-gray-800 rounded-xl card-hover border border-gray-700 cursor-pointer">
+                            <div class="service-icon text-5xl mb-3">⚡</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Electricians</h4>
+                            <p class="text-gray-300 text-sm">Wiring, electrical repairs, installations</p>
+                        </div>
+                        <div onclick="showPage('contractors')" class="text-center p-6 bg-gray-800 rounded-xl card-hover border border-gray-700 cursor-pointer">
+                            <div class="service-icon text-5xl mb-3">🏗️</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Contractors</h4>
+                            <p class="text-gray-300 text-sm">Complete construction projects</p>
+                        </div>
+                        <div onclick="showPage('civilengineers')" class="text-center p-6 bg-gray-800 rounded-xl card-hover border border-gray-700 cursor-pointer">
+                            <div class="service-icon text-5xl mb-3">👨‍💼</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Civil Engineers</h4>
+                            <p class="text-gray-300 text-sm">Design, planning, project supervision</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Labor Services -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-white mb-6">👷 Labor Services</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div onclick="showPage('skilledlabor')" class="text-center p-6 bg-gray-800 rounded-xl card-hover border border-gray-700 cursor-pointer">
+                            <div class="service-icon text-5xl mb-3">👷‍♂️</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Skilled Labor</h4>
+                            <p class="text-gray-300 text-sm">Masonry, welding, specialized work</p>
+                        </div>
+                        <div onclick="showPage('unskilledlabor')" class="text-center p-6 bg-gray-800 rounded-xl card-hover border border-gray-700 cursor-pointer">
+                            <div class="service-icon text-5xl mb-3">👷</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Unskilled Labor</h4>
+                            <p class="text-gray-300 text-sm">General labor, loading, cleaning</p>
+                        </div>
+                        <div onclick="showPage('painters')" class="text-center p-6 bg-gray-800 rounded-xl card-hover border border-gray-700 cursor-pointer">
+                            <div class="service-icon text-5xl mb-3">🎨</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Painters</h4>
+                            <p class="text-gray-300 text-sm">Interior, exterior, decorative painting</p>
+                        </div>
+                        <div onclick="showPage('carpenters')" class="text-center p-6 bg-gray-800 rounded-xl card-hover border border-gray-700 cursor-pointer">
+                            <div class="service-icon text-5xl mb-3">🔨</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Carpenters</h4>
+                            <p class="text-gray-300 text-sm">Woodwork, furniture, installations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equipment & Machinery -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6">🚜 Equipment & Machinery</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                        <div onclick="showPage('machinery')" class="text-center p-6 bg-gray-800 rounded-xl card-hover border border-gray-700 cursor-pointer">
+                            <div class="service-icon text-5xl mb-3">🚜</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Machinery Operators</h4>
+                            <p class="text-gray-300 text-sm">JCB, excavators, cranes, heavy equipment</p>
+                        </div>
+                        <div onclick="showPage('workshops')" class="text-center p-6 bg-gray-800 rounded-xl card-hover border border-gray-700 cursor-pointer">
+                            <div class="service-icon text-5xl mb-3">🔧</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Workshops</h4>
+                            <p class="text-gray-300 text-sm">Tool rental, equipment repair, fabrication</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join as Professional Section -->
+        <section id="join" class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Join as a Professional</h2>
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <form id="professionalForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                                <input type="text" id="fullName" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                                <input type="tel" id="phone" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                            <input type="email" id="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Service Category *</label>
+                                <select id="category" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Select Category</option>
+                                    <option value="plumber">Plumber</option>
+                                    <option value="electrician">Electrician</option>
+                                    <option value="contractor">Contractor</option>
+                                    <option value="civilengineer">Civil Engineer</option>
+                                    <option value="skilledlabor">Skilled Labor</option>
+                                    <option value="unskilledlabor">Unskilled Labor</option>
+                                    <option value="painter">Painter</option>
+                                    <option value="carpenter">Carpenter</option>
+                                    <option value="machinery">Machinery Operator</option>
+                                    <option value="workshop">Workshop Owner</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Years of Experience *</label>
+                                <select id="experience" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Select Experience</option>
+                                    <option value="0-1">0-1 years</option>
+                                    <option value="2-5">2-5 years</option>
+                                    <option value="6-10">6-10 years</option>
+                                    <option value="10+">10+ years</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Service Area/Location *</label>
+                            <input type="text" id="serviceArea" required placeholder="City, District, or Areas you serve" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Services Description</label>
+                            <textarea id="description" rows="4" placeholder="Describe your services, specializations, and what makes you unique..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Rate per Day/Hour (Optional)</label>
+                            <input type="text" id="rate" placeholder="e.g., ₹500/day or ₹50/hour" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="checkbox" id="terms" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="terms" class="ml-2 block text-sm text-gray-700">I agree to the Terms of Service and Privacy Policy</label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition-colors font-semibold">Register as Professional</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PLUMBERS PAGE -->
+    <div id="plumbers" class="page">
+        <section class="hero-gradient text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="text-6xl mb-4">🔧</div>
+                <h1 class="text-4xl font-bold mb-4">Professional Plumbers</h1>
+                <p class="text-xl mb-6 max-w-3xl mx-auto">Expert plumbing services for residential and commercial needs</p>
+            </div>
+        </section>
+        <section class="py-8 bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap gap-4 items-center justify-between">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterByExperience('plumbers', 'all')" class="filter-btn active px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">All Experience</button>
+                        <button onclick="filterByExperience('plumbers', '0-2')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">0-2 Years</button>
+                        <button onclick="filterByExperience('plumbers', '3-5')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">3-5 Years</button>
+                        <button onclick="filterByExperience('plumbers', '6-10')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">6-10 Years</button>
+                        <button onclick="filterByExperience('plumbers', '10+')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">10+ Years</button>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <select id="plumbersLocationFilter" onchange="filterByLocation('plumbers')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="all">All Locations</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                        </select>
+                        <select id="plumbersSortBy" onchange="sortProfessionals('plumbers')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="rating">Sort by Rating</option>
+                            <option value="experience">Sort by Experience</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">Available Plumbers</h2>
+                    <div class="text-gray-600">
+                        <span id="plumbersCount">10</span> professionals found
+                    </div>
+                </div>
+                <div id="plumbersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ELECTRICIANS PAGE -->
+    <div id="electricians" class="page">
+        <section class="hero-gradient text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="text-6xl mb-4">⚡</div>
+                <h1 class="text-4xl font-bold mb-4">Professional Electricians</h1>
+                <p class="text-xl mb-6 max-w-3xl mx-auto">Certified electrical services for all your power needs</p>
+            </div>
+        </section>
+        <section class="py-8 bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap gap-4 items-center justify-between">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterByExperience('electricians', 'all')" class="filter-btn active px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">All Experience</button>
+                        <button onclick="filterByExperience('electricians', '0-2')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">0-2 Years</button>
+                        <button onclick="filterByExperience('electricians', '3-5')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">3-5 Years</button>
+                        <button onclick="filterByExperience('electricians', '6-10')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">6-10 Years</button>
+                        <button onclick="filterByExperience('electricians', '10+')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">10+ Years</button>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <select id="electriciansLocationFilter" onchange="filterByLocation('electricians')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="all">All Locations</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                        </select>
+                        <select id="electriciansSortBy" onchange="sortProfessionals('electricians')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="rating">Sort by Rating</option>
+                            <option value="experience">Sort by Experience</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">Available Electricians</h2>
+                    <div class="text-gray-600">
+                        <span id="electriciansCount">10</span> professionals found
+                    </div>
+                </div>
+                <div id="electriciansGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTRACTORS PAGE -->
+    <div id="contractors" class="page">
+        <section class="hero-gradient text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="text-6xl mb-4">🏗️</div>
+                <h1 class="text-4xl font-bold mb-4">Professional Contractors</h1>
+                <p class="text-xl mb-6 max-w-3xl mx-auto">Complete construction solutions from planning to completion</p>
+            </div>
+        </section>
+        <section class="py-8 bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap gap-4 items-center justify-between">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterByExperience('contractors', 'all')" class="filter-btn active px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">All Experience</button>
+                        <button onclick="filterByExperience('contractors', '0-2')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">0-2 Years</button>
+                        <button onclick="filterByExperience('contractors', '3-5')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">3-5 Years</button>
+                        <button onclick="filterByExperience('contractors', '6-10')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">6-10 Years</button>
+                        <button onclick="filterByExperience('contractors', '10+')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">10+ Years</button>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <select id="contractorsLocationFilter" onchange="filterByLocation('contractors')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="all">All Locations</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                        </select>
+                        <select id="contractorsSortBy" onchange="sortProfessionals('contractors')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="rating">Sort by Rating</option>
+                            <option value="experience">Sort by Experience</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">Available Contractors</h2>
+                    <div class="text-gray-600">
+                        <span id="contractorsCount">8</span> professionals found
+                    </div>
+                </div>
+                <div id="contractorsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CIVIL ENGINEERS PAGE -->
+    <div id="civilengineers" class="page">
+        <section class="hero-gradient text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="text-6xl mb-4">👨‍💼</div>
+                <h1 class="text-4xl font-bold mb-4">Civil Engineers</h1>
+                <p class="text-xl mb-6 max-w-3xl mx-auto">Expert engineering consultation, design, and project supervision</p>
+            </div>
+        </section>
+        <section class="py-8 bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap gap-4 items-center justify-between">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterByExperience('civilengineers', 'all')" class="filter-btn active px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">All Experience</button>
+                        <button onclick="filterByExperience('civilengineers', '0-2')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">0-2 Years</button>
+                        <button onclick="filterByExperience('civilengineers', '3-5')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">3-5 Years</button>
+                        <button onclick="filterByExperience('civilengineers', '6-10')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">6-10 Years</button>
+                        <button onclick="filterByExperience('civilengineers', '10+')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">10+ Years</button>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <select id="civilengineersLocationFilter" onchange="filterByLocation('civilengineers')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="all">All Locations</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                        </select>
+                        <select id="civilengineersSortBy" onchange="sortProfessionals('civilengineers')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="rating">Sort by Rating</option>
+                            <option value="experience">Sort by Experience</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">Available Civil Engineers</h2>
+                    <div class="text-gray-600">
+                        <span id="civilengineersCount">10</span> professionals found
+                    </div>
+                </div>
+                <div id="civilengineersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SKILLED LABOR PAGE -->
+    <div id="skilledlabor" class="page">
+        <section class="hero-gradient text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="text-6xl mb-4">👷‍♂️</div>
+                <h1 class="text-4xl font-bold mb-4">Skilled Labor</h1>
+                <p class="text-xl mb-6 max-w-3xl mx-auto">Expert craftsmen for specialized construction work</p>
+            </div>
+        </section>
+        <section class="py-8 bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap gap-4 items-center justify-between">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterByExperience('skilledlabor', 'all')" class="filter-btn active px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">All Experience</button>
+                        <button onclick="filterByExperience('skilledlabor', '0-2')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">0-2 Years</button>
+                        <button onclick="filterByExperience('skilledlabor', '3-5')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">3-5 Years</button>
+                        <button onclick="filterByExperience('skilledlabor', '6-10')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">6-10 Years</button>
+                        <button onclick="filterByExperience('skilledlabor', '10+')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">10+ Years</button>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <select id="skilledlaborLocationFilter" onchange="filterByLocation('skilledlabor')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="all">All Locations</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                        </select>
+                        <select id="skilledlaborSortBy" onchange="sortProfessionals('skilledlabor')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="rating">Sort by Rating</option>
+                            <option value="experience">Sort by Experience</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">Available Skilled Labor</h2>
+                    <div class="text-gray-600">
+                        <span id="skilledlaborCount">12</span> professionals found
+                    </div>
+                </div>
+                <div id="skilledlaborGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- UNSKILLED LABOR PAGE -->
+    <div id="unskilledlabor" class="page">
+        <section class="hero-gradient text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="text-6xl mb-4">👷</div>
+                <h1 class="text-4xl font-bold mb-4">Unskilled Labor</h1>
+                <p class="text-xl mb-6 max-w-3xl mx-auto">Reliable workers for general construction and manual labor</p>
+            </div>
+        </section>
+        <section class="py-8 bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap gap-4 items-center justify-between">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterByExperience('unskilledlabor', 'all')" class="filter-btn active px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">All Experience</button>
+                        <button onclick="filterByExperience('unskilledlabor', '0-2')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">0-2 Years</button>
+                        <button onclick="filterByExperience('unskilledlabor', '3-5')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">3-5 Years</button>
+                        <button onclick="filterByExperience('unskilledlabor', '6-10')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">6-10 Years</button>
+                        <button onclick="filterByExperience('unskilledlabor', '10+')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">10+ Years</button>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <select id="unskilledlaborLocationFilter" onchange="filterByLocation('unskilledlabor')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="all">All Locations</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                        </select>
+                        <select id="unskilledlaborSortBy" onchange="sortProfessionals('unskilledlabor')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="rating">Sort by Rating</option>
+                            <option value="experience">Sort by Experience</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">Available Unskilled Labor</h2>
+                    <div class="text-gray-600">
+                        <span id="unskilledlaborCount">15</span> professionals found
+                    </div>
+                </div>
+                <div id="unskilledlaborGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAINTERS PAGE -->
+    <div id="painters" class="page">
+        <section class="hero-gradient text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="text-6xl mb-4">🎨</div>
+                <h1 class="text-4xl font-bold mb-4">Professional Painters</h1>
+                <p class="text-xl mb-6 max-w-3xl mx-auto">Expert painting services for interior, exterior, and decorative work</p>
+            </div>
+        </section>
+        <section class="py-8 bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap gap-4 items-center justify-between">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterByExperience('painters', 'all')" class="filter-btn active px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">All Experience</button>
+                        <button onclick="filterByExperience('painters', '0-2')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">0-2 Years</button>
+                        <button onclick="filterByExperience('painters', '3-5')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">3-5 Years</button>
+                        <button onclick="filterByExperience('painters', '6-10')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">6-10 Years</button>
+                        <button onclick="filterByExperience('painters', '10+')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">10+ Years</button>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <select id="paintersLocationFilter" onchange="filterByLocation('painters')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="all">All Locations</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                        </select>
+                        <select id="paintersSortBy" onchange="sortProfessionals('painters')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="rating">Sort by Rating</option>
+                            <option value="experience">Sort by Experience</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">Available Painters</h2>
+                    <div class="text-gray-600">
+                        <span id="paintersCount">10</span> professionals found
+                    </div>
+                </div>
+                <div id="paintersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CARPENTERS PAGE -->
+    <div id="carpenters" class="page">
+        <section class="hero-gradient text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="text-6xl mb-4">🔨</div>
+                <h1 class="text-4xl font-bold mb-4">Professional Carpenters</h1>
+                <p class="text-xl mb-6 max-w-3xl mx-auto">Expert woodwork, furniture making, and carpentry services</p>
+            </div>
+        </section>
+        <section class="py-8 bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap gap-4 items-center justify-between">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterByExperience('carpenters', 'all')" class="filter-btn active px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">All Experience</button>
+                        <button onclick="filterByExperience('carpenters', '0-2')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">0-2 Years</button>
+                        <button onclick="filterByExperience('carpenters', '3-5')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">3-5 Years</button>
+                        <button onclick="filterByExperience('carpenters', '6-10')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">6-10 Years</button>
+                        <button onclick="filterByExperience('carpenters', '10+')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">10+ Years</button>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <select id="carpentersLocationFilter" onchange="filterByLocation('carpenters')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="all">All Locations</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                        </select>
+                        <select id="carpentersSortBy" onchange="sortProfessionals('carpenters')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="rating">Sort by Rating</option>
+                            <option value="experience">Sort by Experience</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">Available Carpenters</h2>
+                    <div class="text-gray-600">
+                        <span id="carpentersCount">10</span> professionals found
+                    </div>
+                </div>
+                <div id="carpentersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MACHINERY OPERATORS PAGE -->
+    <div id="machinery" class="page">
+        <section class="hero-gradient text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="text-6xl mb-4">🚜</div>
+                <h1 class="text-4xl font-bold mb-4">Machinery Operators</h1>
+                <p class="text-xl mb-6 max-w-3xl mx-auto">Expert operators for JCB, excavators, cranes, and heavy construction equipment</p>
+                <div class="flex justify-center space-x-4 flex-wrap">
+                    <div class="bg-white bg-opacity-20 px-4 py-2 rounded-lg m-1">
+                        <span class="font-semibold">🚜 JCB Operators</span>
+                    </div>
+                    <div class="bg-white bg-opacity-20 px-4 py-2 rounded-lg m-1">
+                        <span class="font-semibold">🏗️ Crane Operators</span>
+                    </div>
+                    <div class="bg-white bg-opacity-20 px-4 py-2 rounded-lg m-1">
+                        <span class="font-semibold">⛏️ Excavator Operators</span>
+                    </div>
+                    <div class="bg-white bg-opacity-20 px-4 py-2 rounded-lg m-1">
+                        <span class="font-semibold">🚛 Heavy Equipment</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-8 bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap gap-4 items-center justify-between">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterByExperience('machinery', 'all')" class="filter-btn active px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">All Experience</button>
+                        <button onclick="filterByExperience('machinery', '0-2')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">0-2 Years</button>
+                        <button onclick="filterByExperience('machinery', '3-5')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">3-5 Years</button>
+                        <button onclick="filterByExperience('machinery', '6-10')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">6-10 Years</button>
+                        <button onclick="filterByExperience('machinery', '10+')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">10+ Years</button>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <select id="machineryLocationFilter" onchange="filterByLocation('machinery')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="all">All Locations</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                        </select>
+                        <select id="machinerySortBy" onchange="sortProfessionals('machinery')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="rating">Sort by Rating</option>
+                            <option value="experience">Sort by Experience</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">Available Machinery Operators</h2>
+                    <div class="text-gray-600">
+                        <span id="machineryCount">12</span> operators found
+                    </div>
+                </div>
+                <div id="machineryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- WORKSHOPS PAGE -->
+    <div id="workshops" class="page">
+        <section class="hero-gradient text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="text-6xl mb-4">🔧</div>
+                <h1 class="text-4xl font-bold mb-4">Workshops & Tool Rental</h1>
+                <p class="text-xl mb-6 max-w-3xl mx-auto">Professional workshops for tool rental, equipment repair, and fabrication services</p>
+                <div class="flex justify-center space-x-4 flex-wrap">
+                    <div class="bg-white bg-opacity-20 px-4 py-2 rounded-lg m-1">
+                        <span class="font-semibold">🔨 Tool Rental</span>
+                    </div>
+                    <div class="bg-white bg-opacity-20 px-4 py-2 rounded-lg m-1">
+                        <span class="font-semibold">⚙️ Equipment Repair</span>
+                    </div>
+                    <div class="bg-white bg-opacity-20 px-4 py-2 rounded-lg m-1">
+                        <span class="font-semibold">🏭 Fabrication</span>
+                    </div>
+                    <div class="bg-white bg-opacity-20 px-4 py-2 rounded-lg m-1">
+                        <span class="font-semibold">🔩 Custom Work</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-8 bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap gap-4 items-center justify-between">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterByExperience('workshops', 'all')" class="filter-btn active px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">All Experience</button>
+                        <button onclick="filterByExperience('workshops', '0-2')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">0-2 Years</button>
+                        <button onclick="filterByExperience('workshops', '3-5')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">3-5 Years</button>
+                        <button onclick="filterByExperience('workshops', '6-10')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">6-10 Years</button>
+                        <button onclick="filterByExperience('workshops', '10+')" class="filter-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-blue-600 hover:text-white">10+ Years</button>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <select id="workshopsLocationFilter" onchange="filterByLocation('workshops')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="all">All Locations</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                        </select>
+                        <select id="workshopsSortBy" onchange="sortProfessionals('workshops')" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="rating">Sort by Rating</option>
+                            <option value="experience">Sort by Experience</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">Available Workshops</h2>
+                    <div class="text-gray-600">
+                        <span id="workshopsCount">8</span> workshops found
+                    </div>
+                </div>
+                <div id="workshopsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">🏗️ Build Better</h3>
+                    <p class="text-gray-300">Complete construction ecosystem connecting professionals with customers across India.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">For Customers</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white">Find Professionals</a></li>
+                        <li><a href="#" class="hover:text-white">Post a Job</a></li>
+                        <li><a href="#" class="hover:text-white">Safety Tips</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">For Professionals</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white">Join Platform</a></li>
+                        <li><a href="#" class="hover:text-white">Manage Profile</a></li>
+                        <li><a href="#" class="hover:text-white">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white">Report Issue</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 Build Better. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-xl max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Login</h3>
+                <button onclick="hideLoginModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Email or Phone</label>
+                    <input type="text" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                    <input type="password" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">Login</button>
+            </form>
+            <p class="text-center mt-4 text-gray-600">Don't have an account? <button onclick="hideLoginModal(); showSignupModal();" class="text-blue-600 hover:underline">Sign up</button></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-xl max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Sign Up</h3>
+                <button onclick="hideSignupModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <form id="signupForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                    <input type="text" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                    <input type="tel" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                    <input type="password" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">I am a:</label>
+                    <select required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">Select Type</option>
+                        <option value="customer">Customer (Looking for services)</option>
+                        <option value="professional">Professional (Providing services)</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition-colors font-semibold">Sign Up</button>
+            </form>
+            <p class="text-center mt-4 text-gray-600">Already have an account? <button onclick="hideSignupModal(); showLoginModal();" class="text-blue-600 hover:underline">Login</button></p>
+        </div>
+    </div>
+
+    <script>
+        // Professional data for all service types
+        const professionalData = {
+            plumbers: [
+                {
+                    id: 1,
+                    name: "Rajesh Kumar",
+                    experience: "12 years",
+                    experienceNum: 12,
+                    location: "Delhi",
+                    rating: 4.9,
+                    reviews: 156,
+                    rate: 800,
+                    rateDisplay: "₹800/day",
+                    phone: "+91 98765 43210",
+                    specialties: ["Pipe Installation", "Water Heater Repair", "Bathroom Fitting"],
+                    description: "Expert plumber with 12+ years experience in residential and commercial plumbing. Specializes in modern pipe installations and emergency repairs.",
+                    availability: "Available 24/7",
+                    verified: true,
+                    emergency: true
+                },
+                {
+                    id: 2,
+                    name: "Suresh Patel",
+                    experience: "8 years",
+                    experienceNum: 8,
+                    location: "Mumbai",
+                    rating: 4.7,
+                    reviews: 89,
+                    rate: 650,
+                    rateDisplay: "₹650/day",
+                    phone: "+91 98765 43211",
+                    specialties: ["Drainage Systems", "Leak Detection", "Pipe Repair"],
+                    description: "Skilled plumber specializing in drainage solutions and leak detection. Known for quick problem diagnosis and efficient repairs.",
+                    availability: "Mon-Sat, 8AM-8PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 3,
+                    name: "Mohammed Ali",
+                    experience: "15 years",
+                    experienceNum: 15,
+                    location: "Bangalore",
+                    rating: 4.8,
+                    reviews: 203,
+                    rate: 900,
+                    rateDisplay: "₹900/day",
+                    phone: "+91 98765 43212",
+                    specialties: ["Commercial Plumbing", "Industrial Systems", "Maintenance"],
+                    description: "Senior plumber with extensive experience in commercial and industrial plumbing systems. Expert in large-scale installations and maintenance.",
+                    availability: "Available 24/7",
+                    verified: true,
+                    emergency: true
+                },
+                {
+                    id: 4,
+                    name: "Amit Sharma",
+                    experience: "5 years",
+                    experienceNum: 5,
+                    location: "Chennai",
+                    rating: 4.6,
+                    reviews: 67,
+                    rate: 550,
+                    rateDisplay: "₹550/day",
+                    phone: "+91 98765 43213",
+                    specialties: ["Home Plumbing", "Fixture Installation", "Basic Repairs"],
+                    description: "Reliable plumber for home plumbing needs. Specializes in fixture installations, basic repairs, and maintenance work.",
+                    availability: "Mon-Fri, 9AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 5,
+                    name: "Vikram Singh",
+                    experience: "10 years",
+                    experienceNum: 10,
+                    location: "Pune",
+                    rating: 4.8,
+                    reviews: 134,
+                    rate: 750,
+                    rateDisplay: "₹750/day",
+                    phone: "+91 98765 43214",
+                    specialties: ["Emergency Repairs", "Pipe Replacement", "Water Systems"],
+                    description: "Emergency plumbing specialist available 24/7. Expert in urgent repairs, pipe replacements, and water system installations.",
+                    availability: "Available 24/7",
+                    verified: true,
+                    emergency: true
+                },
+                {
+                    id: 6,
+                    name: "Ravi Krishnan",
+                    experience: "7 years",
+                    experienceNum: 7,
+                    location: "Hyderabad",
+                    rating: 4.5,
+                    reviews: 78,
+                    rate: 600,
+                    rateDisplay: "₹600/day",
+                    phone: "+91 98765 43215",
+                    specialties: ["Bathroom Renovation", "Modern Fixtures", "Design Consultation"],
+                    description: "Creative plumber specializing in bathroom renovations and modern fixture installations. Offers design consultation services.",
+                    availability: "Tue-Sun, 10AM-7PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 7,
+                    name: "Deepak Gupta",
+                    experience: "3 years",
+                    experienceNum: 3,
+                    location: "Delhi",
+                    rating: 4.4,
+                    reviews: 45,
+                    rate: 450,
+                    rateDisplay: "₹450/day",
+                    phone: "+91 98765 43216",
+                    specialties: ["Basic Plumbing", "Maintenance", "Small Repairs"],
+                    description: "Young and enthusiastic plumber perfect for basic plumbing needs and regular maintenance. Affordable and reliable service.",
+                    availability: "Mon-Sat, 8AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 8,
+                    name: "Santosh Kumar",
+                    experience: "20 years",
+                    experienceNum: 20,
+                    location: "Mumbai",
+                    rating: 4.9,
+                    reviews: 287,
+                    rate: 1000,
+                    rateDisplay: "₹1000/day",
+                    phone: "+91 98765 43217",
+                    specialties: ["Master Plumber", "Complex Systems", "Training & Consultation"],
+                    description: "Master plumber with 20+ years experience. Handles the most complex plumbing systems and provides training to junior plumbers.",
+                    availability: "By Appointment",
+                    verified: true,
+                    emergency: true
+                },
+                {
+                    id: 9,
+                    name: "Manoj Yadav",
+                    experience: "6 years",
+                    experienceNum: 6,
+                    location: "Bangalore",
+                    rating: 4.6,
+                    reviews: 92,
+                    rate: 580,
+                    rateDisplay: "₹580/day",
+                    phone: "+91 98765 43218",
+                    specialties: ["Residential Plumbing", "Water Heaters", "Pump Installation"],
+                    description: "Residential plumbing expert with focus on water heater installations and pump systems. Known for clean and efficient work.",
+                    availability: "Mon-Sat, 9AM-7PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 10,
+                    name: "Ramesh Nair",
+                    experience: "11 years",
+                    experienceNum: 11,
+                    location: "Hyderabad",
+                    rating: 4.8,
+                    reviews: 165,
+                    rate: 820,
+                    rateDisplay: "₹820/day",
+                    phone: "+91 98765 43221",
+                    specialties: ["High-rise Plumbing", "Pressure Systems", "Complex Installations"],
+                    description: "Specialist in high-rise building plumbing and complex pressure systems. Expert in multi-story residential and commercial buildings.",
+                    availability: "Available 24/7",
+                    verified: true,
+                    emergency: true
+                }
+            ],
+            electricians: [
+                {
+                    id: 1,
+                    name: "Arun Electricals",
+                    experience: "14 years",
+                    experienceNum: 14,
+                    location: "Delhi",
+                    rating: 4.9,
+                    reviews: 198,
+                    rate: 850,
+                    rateDisplay: "₹850/day",
+                    phone: "+91 98765 54321",
+                    specialties: ["Industrial Wiring", "Panel Installation", "Motor Repair"],
+                    description: "Certified electrician with expertise in industrial and commercial electrical systems. Licensed for high-voltage installations.",
+                    availability: "Available 24/7",
+                    verified: true,
+                    emergency: true
+                },
+                {
+                    id: 2,
+                    name: "Pradeep Kumar",
+                    experience: "9 years",
+                    experienceNum: 9,
+                    location: "Mumbai",
+                    rating: 4.7,
+                    reviews: 134,
+                    rate: 700,
+                    rateDisplay: "₹700/day",
+                    phone: "+91 98765 54322",
+                    specialties: ["Home Wiring", "LED Installation", "Safety Systems"],
+                    description: "Residential electrical specialist focusing on modern home automation and energy-efficient lighting solutions.",
+                    availability: "Mon-Sat, 8AM-7PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 3,
+                    name: "Sanjay Electrician",
+                    experience: "16 years",
+                    experienceNum: 16,
+                    location: "Bangalore",
+                    rating: 4.8,
+                    reviews: 245,
+                    rate: 950,
+                    rateDisplay: "₹950/day",
+                    phone: "+91 98765 54323",
+                    specialties: ["Solar Installation", "Inverter Setup", "Green Energy"],
+                    description: "Green energy specialist with extensive experience in solar panel installations and renewable energy systems.",
+                    availability: "Available 24/7",
+                    verified: true,
+                    emergency: true
+                },
+                {
+                    id: 4,
+                    name: "Raman Singh",
+                    experience: "6 years",
+                    experienceNum: 6,
+                    location: "Chennai",
+                    rating: 4.5,
+                    reviews: 87,
+                    rate: 600,
+                    rateDisplay: "₹600/day",
+                    phone: "+91 98765 54324",
+                    specialties: ["Basic Wiring", "Fan Installation", "Switch Repair"],
+                    description: "Reliable electrician for basic electrical needs and home maintenance. Known for punctuality and fair pricing.",
+                    availability: "Mon-Fri, 9AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 5,
+                    name: "Mukesh Electrical",
+                    experience: "11 years",
+                    experienceNum: 11,
+                    location: "Pune",
+                    rating: 4.8,
+                    reviews: 156,
+                    rate: 780,
+                    rateDisplay: "₹780/day",
+                    phone: "+91 98765 54325",
+                    specialties: ["Emergency Repairs", "Circuit Troubleshooting", "Power Restoration"],
+                    description: "Emergency electrical services specialist. Expert in quick diagnosis and repair of electrical faults and power issues.",
+                    availability: "Available 24/7",
+                    verified: true,
+                    emergency: true
+                },
+                {
+                    id: 6,
+                    name: "Naveen Kumar",
+                    experience: "8 years",
+                    experienceNum: 8,
+                    location: "Hyderabad",
+                    rating: 4.6,
+                    reviews: 112,
+                    rate: 650,
+                    rateDisplay: "₹650/day",
+                    phone: "+91 98765 54326",
+                    specialties: ["Smart Home Setup", "Automation", "Security Systems"],
+                    description: "Modern electrician specializing in smart home installations and home automation systems. Tech-savvy and innovative.",
+                    availability: "Tue-Sun, 10AM-8PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 7,
+                    name: "Kishore Reddy",
+                    experience: "4 years",
+                    experienceNum: 4,
+                    location: "Delhi",
+                    rating: 4.4,
+                    reviews: 63,
+                    rate: 500,
+                    rateDisplay: "₹500/day",
+                    phone: "+91 98765 54327",
+                    specialties: ["Appliance Repair", "Basic Installation", "Maintenance"],
+                    description: "Young electrician perfect for appliance repairs and basic electrical maintenance. Affordable and learning-oriented.",
+                    availability: "Mon-Sat, 8AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 8,
+                    name: "Master Electrician Sharma",
+                    experience: "22 years",
+                    experienceNum: 22,
+                    location: "Mumbai",
+                    rating: 4.9,
+                    reviews: 312,
+                    rate: 1200,
+                    rateDisplay: "₹1200/day",
+                    phone: "+91 98765 54328",
+                    specialties: ["Master Electrician", "Training", "Complex Projects"],
+                    description: "Master electrician with over 20 years experience. Handles the most complex electrical projects and trains junior electricians.",
+                    availability: "By Appointment",
+                    verified: true,
+                    emergency: true
+                },
+                {
+                    id: 9,
+                    name: "Vinod Electrical Works",
+                    experience: "7 years",
+                    experienceNum: 7,
+                    location: "Bangalore",
+                    rating: 4.6,
+                    reviews: 98,
+                    rate: 620,
+                    rateDisplay: "₹620/day",
+                    phone: "+91 98765 54329",
+                    specialties: ["Office Wiring", "Commercial Setup", "Maintenance Contracts"],
+                    description: "Commercial electrical specialist with focus on office buildings and commercial establishments. Offers maintenance contracts.",
+                    availability: "Mon-Sat, 9AM-7PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 10,
+                    name: "Rajesh Power Solutions",
+                    experience: "13 years",
+                    experienceNum: 13,
+                    location: "Chennai",
+                    rating: 4.7,
+                    reviews: 187,
+                    rate: 880,
+                    rateDisplay: "₹880/day",
+                    phone: "+91 98765 54330",
+                    specialties: ["Power Distribution", "Transformer Work", "High Voltage"],
+                    description: "Power systems specialist with expertise in distribution networks and high-voltage electrical work. Licensed for utility work.",
+                    availability: "Available 24/7",
+                    verified: true,
+                    emergency: true
+                }
+            ],
+            contractors: [
+                {
+                    id: 1,
+                    name: "BuildMax Constructions",
+                    experience: "15 years",
+                    experienceNum: 15,
+                    location: "Delhi",
+                    rating: 4.9,
+                    reviews: 234,
+                    rate: 2500,
+                    rateDisplay: "₹2500/day",
+                    phone: "+91 98765 76543",
+                    specialties: ["Residential Construction", "Commercial Buildings", "Project Management"],
+                    description: "Leading construction company with 15+ years experience in residential and commercial projects. Full project management services.",
+                    availability: "Mon-Sat, 9AM-7PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 2,
+                    name: "Sharma Builders",
+                    experience: "12 years",
+                    experienceNum: 12,
+                    location: "Mumbai",
+                    rating: 4.7,
+                    reviews: 187,
+                    rate: 2200,
+                    rateDisplay: "₹2200/day",
+                    phone: "+91 98765 76544",
+                    specialties: ["Home Renovation", "Interior Design", "Modular Construction"],
+                    description: "Renovation specialists with expertise in home makeovers and interior design. Modern construction techniques and quality materials.",
+                    availability: "Mon-Sat, 8AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 3,
+                    name: "TechBuild Solutions",
+                    experience: "18 years",
+                    experienceNum: 18,
+                    location: "Bangalore",
+                    rating: 4.8,
+                    reviews: 298,
+                    rate: 3000,
+                    rateDisplay: "₹3000/day",
+                    phone: "+91 98765 76545",
+                    specialties: ["Smart Buildings", "Green Construction", "Technology Integration"],
+                    description: "Advanced construction company specializing in smart buildings and green construction. Technology-driven approach to modern construction.",
+                    availability: "Mon-Fri, 9AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 4,
+                    name: "Reliable Contractors",
+                    experience: "10 years",
+                    experienceNum: 10,
+                    location: "Chennai",
+                    rating: 4.6,
+                    reviews: 145,
+                    rate: 1800,
+                    rateDisplay: "₹1800/day",
+                    phone: "+91 98765 76546",
+                    specialties: ["Small Projects", "Repairs", "Maintenance"],
+                    description: "Reliable contractor for small to medium projects, repairs, and maintenance work. Known for timely completion and fair pricing.",
+                    availability: "Mon-Sat, 8AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 5,
+                    name: "Elite Construction Group",
+                    experience: "20 years",
+                    experienceNum: 20,
+                    location: "Pune",
+                    rating: 4.9,
+                    reviews: 356,
+                    rate: 3500,
+                    rateDisplay: "₹3500/day",
+                    phone: "+91 98765 76547",
+                    specialties: ["Luxury Projects", "High-end Construction", "Premium Materials"],
+                    description: "Premium construction company specializing in luxury residential and commercial projects. High-end materials and superior craftsmanship.",
+                    availability: "By Appointment",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 6,
+                    name: "Quick Build Services",
+                    experience: "8 years",
+                    experienceNum: 8,
+                    location: "Hyderabad",
+                    rating: 4.5,
+                    reviews: 112,
+                    rate: 1500,
+                    rateDisplay: "₹1500/day",
+                    phone: "+91 98765 76548",
+                    specialties: ["Fast Construction", "Emergency Repairs", "Quick Solutions"],
+                    description: "Fast construction services for urgent projects and emergency repairs. Quick turnaround time without compromising quality.",
+                    availability: "Available 24/7",
+                    verified: true,
+                    emergency: true
+                },
+                {
+                    id: 7,
+                    name: "Heritage Builders",
+                    experience: "25 years",
+                    experienceNum: 25,
+                    location: "Delhi",
+                    rating: 4.8,
+                    reviews: 423,
+                    rate: 4000,
+                    rateDisplay: "₹4000/day",
+                    phone: "+91 98765 76549",
+                    specialties: ["Heritage Restoration", "Traditional Construction", "Conservation"],
+                    description: "Specialized in heritage building restoration and traditional construction methods. Expert in conservation and historical building techniques.",
+                    availability: "Mon-Fri, 10AM-5PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 8,
+                    name: "Modern Constructions",
+                    experience: "14 years",
+                    experienceNum: 14,
+                    location: "Mumbai",
+                    rating: 4.7,
+                    reviews: 203,
+                    rate: 2800,
+                    rateDisplay: "₹2800/day",
+                    phone: "+91 98765 76550",
+                    specialties: ["Modern Architecture", "Sustainable Building", "Energy Efficient"],
+                    description: "Modern construction company focusing on contemporary architecture and sustainable building practices. Energy-efficient solutions.",
+                    availability: "Mon-Sat, 9AM-6PM",
+                    verified: true,
+                    emergency: false
+                }
+            ],
+            civilengineers: [
+                {
+                    id: 1,
+                    name: "Dr. Rajesh Mehta",
+                    experience: "18 years",
+                    experienceNum: 18,
+                    location: "Delhi",
+                    rating: 4.9,
+                    reviews: 156,
+                    rate: 3500,
+                    rateDisplay: "₹3500/day",
+                    phone: "+91 98765 87654",
+                    specialties: ["Structural Design", "Project Planning", "Quality Control"],
+                    description: "Senior Civil Engineer with PhD in Structural Engineering. Expert in high-rise building design and complex infrastructure projects.",
+                    availability: "Mon-Fri, 9AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 2,
+                    name: "Priya Sharma",
+                    experience: "12 years",
+                    experienceNum: 12,
+                    location: "Mumbai",
+                    rating: 4.8,
+                    reviews: 134,
+                    rate: 2800,
+                    rateDisplay: "₹2800/day",
+                    phone: "+91 98765 87655",
+                    specialties: ["Residential Design", "Site Supervision", "Cost Estimation"],
+                    description: "Experienced civil engineer specializing in residential projects. Expert in modern construction techniques and sustainable design.",
+                    availability: "Mon-Sat, 8AM-7PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 3,
+                    name: "Eng. Suresh Kumar",
+                    experience: "22 years",
+                    experienceNum: 22,
+                    location: "Bangalore",
+                    rating: 4.9,
+                    reviews: 298,
+                    rate: 4200,
+                    rateDisplay: "₹4200/day",
+                    phone: "+91 98765 87656",
+                    specialties: ["Infrastructure Projects", "Bridge Design", "Highway Planning"],
+                    description: "Senior infrastructure engineer with expertise in large-scale projects. Former government engineer with extensive public works experience.",
+                    availability: "By Appointment",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 4,
+                    name: "Anita Patel",
+                    experience: "8 years",
+                    experienceNum: 8,
+                    location: "Chennai",
+                    rating: 4.6,
+                    reviews: 89,
+                    rate: 2200,
+                    rateDisplay: "₹2200/day",
+                    phone: "+91 98765 87657",
+                    specialties: ["Environmental Engineering", "Water Management", "Green Building"],
+                    description: "Environmental civil engineer focusing on sustainable construction and water management systems. LEED certified professional.",
+                    availability: "Mon-Fri, 9AM-5PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 5,
+                    name: "Vikram Reddy",
+                    experience: "15 years",
+                    experienceNum: 15,
+                    location: "Pune",
+                    rating: 4.7,
+                    reviews: 187,
+                    rate: 3200,
+                    rateDisplay: "₹3200/day",
+                    phone: "+91 98765 87658",
+                    specialties: ["Commercial Projects", "Industrial Design", "Project Management"],
+                    description: "Commercial and industrial civil engineer with PMP certification. Expert in factory and warehouse construction projects.",
+                    availability: "Mon-Sat, 9AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 6,
+                    name: "Kavita Singh",
+                    experience: "10 years",
+                    experienceNum: 10,
+                    location: "Hyderabad",
+                    rating: 4.5,
+                    reviews: 112,
+                    rate: 2500,
+                    rateDisplay: "₹2500/day",
+                    phone: "+91 98765 87659",
+                    specialties: ["Geotechnical Engineering", "Foundation Design", "Soil Analysis"],
+                    description: "Geotechnical specialist with expertise in foundation design and soil mechanics. Essential for complex foundation projects.",
+                    availability: "Mon-Fri, 8AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 7,
+                    name: "Amit Joshi",
+                    experience: "6 years",
+                    experienceNum: 6,
+                    location: "Delhi",
+                    rating: 4.4,
+                    reviews: 76,
+                    rate: 1800,
+                    rateDisplay: "₹1800/day",
+                    phone: "+91 98765 87660",
+                    specialties: ["CAD Design", "3D Modeling", "Technical Drawing"],
+                    description: "Young engineer specializing in CAD design and 3D modeling. Expert in AutoCAD, Revit, and modern design software.",
+                    availability: "Mon-Sat, 9AM-7PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 8,
+                    name: "Dr. Meera Gupta",
+                    experience: "20 years",
+                    experienceNum: 20,
+                    location: "Mumbai",
+                    rating: 4.8,
+                    reviews: 245,
+                    rate: 3800,
+                    rateDisplay: "₹3800/day",
+                    phone: "+91 98765 87661",
+                    specialties: ["Earthquake Engineering", "Seismic Design", "Risk Assessment"],
+                    description: "Earthquake engineering specialist with PhD in Seismic Design. Expert in earthquake-resistant construction and risk assessment.",
+                    availability: "Mon-Fri, 10AM-5PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 9,
+                    name: "Ravi Agarwal",
+                    experience: "14 years",
+                    experienceNum: 14,
+                    location: "Bangalore",
+                    rating: 4.7,
+                    reviews: 167,
+                    rate: 2900,
+                    rateDisplay: "₹2900/day",
+                    phone: "+91 98765 87662",
+                    specialties: ["Transportation Engineering", "Traffic Planning", "Road Design"],
+                    description: "Transportation engineer with expertise in road design and traffic planning. Specialist in urban infrastructure development.",
+                    availability: "Mon-Sat, 8AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 10,
+                    name: "Sunita Rao",
+                    experience: "11 years",
+                    experienceNum: 11,
+                    location: "Chennai",
+                    rating: 4.6,
+                    reviews: 134,
+                    rate: 2600,
+                    rateDisplay: "₹2600/day",
+                    phone: "+91 98765 87663",
+                    specialties: ["Construction Management", "Quality Assurance", "Safety Planning"],
+                    description: "Construction management specialist with focus on quality assurance and safety planning. Expert in project coordination and supervision.",
+                    availability: "Mon-Fri, 9AM-6PM",
+                    verified: true,
+                    emergency: false
+                }
+            ],
+            skilledlabor: [
+                {
+                    id: 1,
+                    name: "Master Mason Raju",
+                    experience: "16 years",
+                    experienceNum: 16,
+                    location: "Delhi",
+                    rating: 4.8,
+                    reviews: 198,
+                    rate: 800,
+                    rateDisplay: "₹800/day",
+                    phone: "+91 98765 98765",
+                    specialties: ["Stone Masonry", "Brick Work", "Architectural Details"],
+                    description: "Master mason with 16+ years experience in traditional and modern masonry. Expert in decorative stonework and architectural details.",
+                    availability: "Mon-Sat, 7AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 2,
+                    name: "Welder Suresh",
+                    experience: "12 years",
+                    experienceNum: 12,
+                    location: "Mumbai",
+                    rating: 4.7,
+                    reviews: 156,
+                    rate: 750,
+                    rateDisplay: "₹750/day",
+                    phone: "+91 98765 98766",
+                    specialties: ["Arc Welding", "Gas Welding", "Steel Fabrication"],
+                    description: "Certified welder with expertise in all types of welding. Specializes in structural steel work and custom fabrication.",
+                    availability: "Mon-Sat, 8AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 3,
+                    name: "Tile Expert Mohan",
+                    experience: "14 years",
+                    experienceNum: 14,
+                    location: "Bangalore",
+                    rating: 4.9,
+                    reviews: 234,
+                    rate: 700,
+                    rateDisplay: "₹700/day",
+                    phone: "+91 98765 98767",
+                    specialties: ["Ceramic Tiles", "Marble Work", "Designer Patterns"],
+                    description: "Master tile installer with expertise in all types of tiles. Known for precision work and creative pattern designs.",
+                    availability: "Mon-Fri, 8AM-5PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 4,
+                    name: "Steel Fixer Ramesh",
+                    experience: "10 years",
+                    experienceNum: 10,
+                    location: "Chennai",
+                    rating: 4.6,
+                    reviews: 123,
+                    rate: 650,
+                    rateDisplay: "₹650/day",
+                    phone: "+91 98765 98768",
+                    specialties: ["Reinforcement Steel", "Structural Work", "Foundation Steel"],
+                    description: "Expert steel fixer with 10+ years experience in reinforcement work. Specializes in complex structural steel arrangements.",
+                    availability: "Mon-Sat, 7AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 5,
+                    name: "Plasterer Vijay",
+                    experience: "11 years",
+                    experienceNum: 11,
+                    location: "Pune",
+                    rating: 4.7,
+                    reviews: 167,
+                    rate: 600,
+                    rateDisplay: "₹600/day",
+                    phone: "+91 98765 98769",
+                    specialties: ["Wall Plastering", "Ceiling Work", "Texture Finish"],
+                    description: "Professional plasterer with expertise in smooth finishes and decorative textures. Known for quality workmanship.",
+                    availability: "Mon-Sat, 8AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 6,
+                    name: "Waterproofing Expert Ashok",
+                    experience: "9 years",
+                    experienceNum: 9,
+                    location: "Hyderabad",
+                    rating: 4.5,
+                    reviews: 98,
+                    rate: 550,
+                    rateDisplay: "₹550/day",
+                    phone: "+91 98765 98770",
+                    specialties: ["Roof Waterproofing", "Basement Sealing", "Leak Repair"],
+                    description: "Waterproofing specialist with expertise in all types of sealing work. Essential for monsoon preparation and leak prevention.",
+                    availability: "Mon-Fri, 9AM-5PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 7,
+                    name: "Formwork Specialist Ganesh",
+                    experience: "13 years",
+                    experienceNum: 13,
+                    location: "Delhi",
+                    rating: 4.8,
+                    reviews: 189,
+                    rate: 720,
+                    rateDisplay: "₹720/day",
+                    phone: "+91 98765 98771",
+                    specialties: ["Concrete Formwork", "Shuttering", "Complex Shapes"],
+                    description: "Formwork expert with 13+ years experience in concrete work. Specializes in complex architectural shapes and structures.",
+                    availability: "Mon-Sat, 7AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 8,
+                    name: "Flooring Expert Dinesh",
+                    experience: "8 years",
+                    experienceNum: 8,
+                    location: "Mumbai",
+                    rating: 4.6,
+                    reviews: 134,
+                    rate: 580,
+                    rateDisplay: "₹580/day",
+                    phone: "+91 98765 98772",
+                    specialties: ["Wooden Flooring", "Laminate", "Vinyl Installation"],
+                    description: "Flooring specialist with expertise in all types of floor installations. Known for precision and attention to detail.",
+                    availability: "Mon-Sat, 8AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 9,
+                    name: "Roofing Expert Prakash",
+                    experience: "15 years",
+                    experienceNum: 15,
+                    location: "Bangalore",
+                    rating: 4.7,
+                    reviews: 201,
+                    rate: 780,
+                    rateDisplay: "₹780/day",
+                    phone: "+91 98765 98773",
+                    specialties: ["Metal Roofing", "Tile Roofing", "Roof Repair"],
+                    description: "Roofing specialist with 15+ years experience in all types of roofing work. Expert in both traditional and modern roofing systems.",
+                    availability: "Mon-Sat, 7AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 10,
+                    name: "Concrete Specialist Manoj",
+                    experience: "12 years",
+                    experienceNum: 12,
+                    location: "Chennai",
+                    rating: 4.8,
+                    reviews: 176,
+                    rate: 700,
+                    rateDisplay: "₹700/day",
+                    phone: "+91 98765 98774",
+                    specialties: ["Concrete Pouring", "Finishing", "Decorative Concrete"],
+                    description: "Concrete specialist with expertise in all aspects of concrete work. Known for smooth finishes and decorative concrete techniques.",
+                    availability: "Mon-Sat, 7AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 11,
+                    name: "Insulation Expert Ravi",
+                    experience: "7 years",
+                    experienceNum: 7,
+                    location: "Pune",
+                    rating: 4.5,
+                    reviews: 89,
+                    rate: 520,
+                    rateDisplay: "₹520/day",
+                    phone: "+91 98765 98775",
+                    specialties: ["Thermal Insulation", "Sound Proofing", "Energy Efficiency"],
+                    description: "Insulation specialist focusing on thermal and acoustic insulation. Expert in energy-efficient building solutions.",
+                    availability: "Mon-Fri, 8AM-5PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 12,
+                    name: "Glass Work Expert Santosh",
+                    experience: "10 years",
+                    experienceNum: 10,
+                    location: "Hyderabad",
+                    rating: 4.6,
+                    reviews: 145,
+                    rate: 650,
+                    rateDisplay: "₹650/day",
+                    phone: "+91 98765 98776",
+                    specialties: ["Glass Installation", "Window Fitting", "Glazing Work"],
+                    description: "Glass work specialist with 10+ years experience in all types of glass installations. Expert in modern glazing techniques.",
+                    availability: "Mon-Sat, 8AM-6PM",
+                    verified: true,
+                    emergency: false
+                }
+            ],
+            unskilledlabor: [
+                {
+                    id: 1,
+                    name: "Labor Team - Rajesh Group",
+                    experience: "5 years",
+                    experienceNum: 5,
+                    location: "Delhi",
+                    rating: 4.5,
+                    reviews: 89,
+                    rate: 400,
+                    rateDisplay: "₹400/day",
+                    phone: "+91 98765 11111",
+                    specialties: ["Material Handling", "Site Cleaning", "General Labor"],
+                    description: "Reliable labor team for general construction work. Experienced in material handling, site preparation, and cleaning work.",
+                    availability: "Available 7 days",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 2,
+                    name: "Construction Helpers - Mumbai",
+                    experience: "3 years",
+                    experienceNum: 3,
+                    location: "Mumbai",
+                    rating: 4.3,
+                    reviews: 67,
+                    rate: 380,
+                    rateDisplay: "₹380/day",
+                    phone: "+91 98765 11112",
+                    specialties: ["Loading/Unloading", "Digging", "Carrying Materials"],
+                    description: "Hardworking labor team for basic construction tasks. Reliable for loading, unloading, and material transportation.",
+                    availability: "Mon-Sat, 7AM-7PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 3,
+                    name: "Site Workers - Bangalore Team",
+                    experience: "4 years",
+                    experienceNum: 4,
+                    location: "Bangalore",
+                    rating: 4.4,
+                    reviews: 78,
+                    rate: 420,
+                    rateDisplay: "₹420/day",
+                    phone: "+91 98765 11113",
+                    specialties: ["Demolition Help", "Debris Removal", "Site Preparation"],
+                    description: "Experienced site workers for demolition assistance and debris removal. Good for site preparation and cleaning work.",
+                    availability: "Mon-Sat, 8AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 4,
+                    name: "General Labor - Chennai",
+                    experience: "2 years",
+                    experienceNum: 2,
+                    location: "Chennai",
+                    rating: 4.2,
+                    reviews: 45,
+                    rate: 350,
+                    rateDisplay: "₹350/day",
+                    phone: "+91 98765 11114",
+                    specialties: ["Basic Construction", "Mixing Concrete", "Tool Assistance"],
+                    description: "Basic labor team for simple construction tasks. Good for concrete mixing, tool assistance, and general help.",
+                    availability: "Mon-Fri, 8AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 5,
+                    name: "Helper Team - Pune",
+                    experience: "6 years",
+                    experienceNum: 6,
+                    location: "Pune",
+                    rating: 4.6,
+                    reviews: 112,
+                    rate: 450,
+                    rateDisplay: "₹450/day",
+                    phone: "+91 98765 11115",
+                    specialties: ["Skilled Assistance", "Material Organization", "Quality Support"],
+                    description: "Experienced helper team that can assist skilled workers. Good for material organization and providing quality support.",
+                    availability: "Mon-Sat, 7AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 6,
+                    name: "Construction Crew - Hyderabad",
+                    experience: "4 years",
+                    experienceNum: 4,
+                    location: "Hyderabad",
+                    rating: 4.3,
+                    reviews: 67,
+                    rate: 390,
+                    rateDisplay: "₹390/day",
+                    phone: "+91 98765 11116",
+                    specialties: ["Earth Work", "Foundation Help", "Basic Tasks"],
+                    description: "Construction crew for earth work and foundation assistance. Reliable for basic construction tasks and manual work.",
+                    availability: "Mon-Sat, 8AM-6PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 7,
+                    name: "Labor Contractors - Delhi NCR",
+                    experience: "8 years",
+                    experienceNum: 8,
+                    location: "Delhi",
+                    rating: 4.7,
+                    reviews: 156,
+                    rate: 480,
+                    rateDisplay: "₹480/day",
+                    phone: "+91 98765 11117",
+                    specialties: ["Large Projects", "Team Management", "Bulk Labor"],
+                    description: "Labor contractors providing teams for large projects. Experienced in managing bulk labor requirements and team coordination.",
+                    availability: "Available 24/7",
+                    verified: true,
+                    emergency: true
+                },
+                {
+                    id: 8,
+                    name: "Site Cleaners - Mumbai",
+                    experience: "3 years",
+                    experienceNum: 3,
+                    location: "Mumbai",
+                    rating: 4.2,
+                    reviews: 56,
+                    rate: 320,
+                    rateDisplay: "₹320/day",
+                    phone: "+91 98765 11118",
+                    specialties: ["Site Cleaning", "Waste Management", "Final Cleanup"],
+                    description: "Specialized in site cleaning and waste management. Perfect for final cleanup and maintaining clean construction sites.",
+                    availability: "Mon-Sat, 9AM-5PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 9,
+                    name: "Material Handlers - Bangalore",
+                    experience: "5 years",
+                    experienceNum: 5,
+                    location: "Bangalore",
+                    rating: 4.5,
+                    reviews: 89,
+                    rate: 430,
+                    rateDisplay: "₹430/day",
+                    phone: "+91 98765 11119",
+                    specialties: ["Heavy Lifting", "Material Transport", "Warehouse Work"],
+                    description: "Specialized material handlers for heavy lifting and transport. Experienced in warehouse work and material management.",
+                    availability: "Mon-Sat, 7AM-7PM",
+                    verified: true,
+                    emergency: false
+                },
+                {
+                    id: 10,
+                    name: "General Workers - Chennai",
+                    experience: "4 years",
+                    experienceNum: 4,
+                    location: "Chennai",
+                    rating: 4.4,
+                    reviews: 73,
+                    rate: 400,
+                    rateDisplay: "₹400/day",
+                    phone: "+91 98765 11120",
+                    specialties: ["
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9730254e75e5596c',t:'MTc1NTg0MjM4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
