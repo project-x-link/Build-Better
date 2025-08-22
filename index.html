@@ -74,6 +74,28 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+        .professional-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .professional-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6b7280;
+        }
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -293,7 +315,7 @@
         </section>
     </div>
 
-    <!-- PLUMBERS PAGE -->
+    <!-- SERVICE PAGES -->
     <div id="plumbers" class="page">
         <section class="hero-gradient text-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -337,15 +359,21 @@
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-3xl font-bold text-gray-800">Available Plumbers</h2>
                     <div class="text-gray-600">
-                        <span id="plumbersCount">10</span> professionals found
+                        <span id="plumbersCount">0</span> professionals found
                     </div>
                 </div>
-                <div id="plumbersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="plumbersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🔧</div>
+                        <h3 class="text-xl font-semibold mb-2">No Plumbers Available</h3>
+                        <p>Be the first professional to join this category!</p>
+                        <button onclick="scrollToSection('join')" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Join as Professional</button>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
-    <!-- ELECTRICIANS PAGE -->
     <div id="electricians" class="page">
         <section class="hero-gradient text-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -389,15 +417,21 @@
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-3xl font-bold text-gray-800">Available Electricians</h2>
                     <div class="text-gray-600">
-                        <span id="electriciansCount">10</span> professionals found
+                        <span id="electriciansCount">0</span> professionals found
                     </div>
                 </div>
-                <div id="electriciansGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="electriciansGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">⚡</div>
+                        <h3 class="text-xl font-semibold mb-2">No Electricians Available</h3>
+                        <p>Be the first professional to join this category!</p>
+                        <button onclick="scrollToSection('join')" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Join as Professional</button>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
-    <!-- CONTRACTORS PAGE -->
     <div id="contractors" class="page">
         <section class="hero-gradient text-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -441,15 +475,21 @@
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-3xl font-bold text-gray-800">Available Contractors</h2>
                     <div class="text-gray-600">
-                        <span id="contractorsCount">8</span> professionals found
+                        <span id="contractorsCount">0</span> professionals found
                     </div>
                 </div>
-                <div id="contractorsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="contractorsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🏗️</div>
+                        <h3 class="text-xl font-semibold mb-2">No Contractors Available</h3>
+                        <p>Be the first professional to join this category!</p>
+                        <button onclick="scrollToSection('join')" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Join as Professional</button>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
-    <!-- CIVIL ENGINEERS PAGE -->
     <div id="civilengineers" class="page">
         <section class="hero-gradient text-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -493,15 +533,21 @@
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-3xl font-bold text-gray-800">Available Civil Engineers</h2>
                     <div class="text-gray-600">
-                        <span id="civilengineersCount">10</span> professionals found
+                        <span id="civilengineersCount">0</span> professionals found
                     </div>
                 </div>
-                <div id="civilengineersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="civilengineersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">👨‍💼</div>
+                        <h3 class="text-xl font-semibold mb-2">No Civil Engineers Available</h3>
+                        <p>Be the first professional to join this category!</p>
+                        <button onclick="scrollToSection('join')" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Join as Professional</button>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
-    <!-- SKILLED LABOR PAGE -->
     <div id="skilledlabor" class="page">
         <section class="hero-gradient text-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -545,15 +591,21 @@
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-3xl font-bold text-gray-800">Available Skilled Labor</h2>
                     <div class="text-gray-600">
-                        <span id="skilledlaborCount">12</span> professionals found
+                        <span id="skilledlaborCount">0</span> professionals found
                     </div>
                 </div>
-                <div id="skilledlaborGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="skilledlaborGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">👷‍♂️</div>
+                        <h3 class="text-xl font-semibold mb-2">No Skilled Labor Available</h3>
+                        <p>Be the first professional to join this category!</p>
+                        <button onclick="scrollToSection('join')" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Join as Professional</button>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
-    <!-- UNSKILLED LABOR PAGE -->
     <div id="unskilledlabor" class="page">
         <section class="hero-gradient text-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -597,15 +649,21 @@
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-3xl font-bold text-gray-800">Available Unskilled Labor</h2>
                     <div class="text-gray-600">
-                        <span id="unskilledlaborCount">15</span> professionals found
+                        <span id="unskilledlaborCount">0</span> professionals found
                     </div>
                 </div>
-                <div id="unskilledlaborGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="unskilledlaborGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">👷</div>
+                        <h3 class="text-xl font-semibold mb-2">No Unskilled Labor Available</h3>
+                        <p>Be the first professional to join this category!</p>
+                        <button onclick="scrollToSection('join')" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Join as Professional</button>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
-    <!-- PAINTERS PAGE -->
     <div id="painters" class="page">
         <section class="hero-gradient text-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -649,15 +707,21 @@
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-3xl font-bold text-gray-800">Available Painters</h2>
                     <div class="text-gray-600">
-                        <span id="paintersCount">10</span> professionals found
+                        <span id="paintersCount">0</span> professionals found
                     </div>
                 </div>
-                <div id="paintersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="paintersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🎨</div>
+                        <h3 class="text-xl font-semibold mb-2">No Painters Available</h3>
+                        <p>Be the first professional to join this category!</p>
+                        <button onclick="scrollToSection('join')" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Join as Professional</button>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
-    <!-- CARPENTERS PAGE -->
     <div id="carpenters" class="page">
         <section class="hero-gradient text-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -701,15 +765,21 @@
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-3xl font-bold text-gray-800">Available Carpenters</h2>
                     <div class="text-gray-600">
-                        <span id="carpentersCount">10</span> professionals found
+                        <span id="carpentersCount">0</span> professionals found
                     </div>
                 </div>
-                <div id="carpentersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="carpentersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🔨</div>
+                        <h3 class="text-xl font-semibold mb-2">No Carpenters Available</h3>
+                        <p>Be the first professional to join this category!</p>
+                        <button onclick="scrollToSection('join')" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Join as Professional</button>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
-    <!-- MACHINERY OPERATORS PAGE -->
     <div id="machinery" class="page">
         <section class="hero-gradient text-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -767,15 +837,21 @@
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-3xl font-bold text-gray-800">Available Machinery Operators</h2>
                     <div class="text-gray-600">
-                        <span id="machineryCount">12</span> operators found
+                        <span id="machineryCount">0</span> operators found
                     </div>
                 </div>
-                <div id="machineryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="machineryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🚜</div>
+                        <h3 class="text-xl font-semibold mb-2">No Machinery Operators Available</h3>
+                        <p>Be the first professional to join this category!</p>
+                        <button onclick="scrollToSection('join')" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Join as Professional</button>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
-    <!-- WORKSHOPS PAGE -->
     <div id="workshops" class="page">
         <section class="hero-gradient text-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -833,10 +909,17 @@
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-3xl font-bold text-gray-800">Available Workshops</h2>
                     <div class="text-gray-600">
-                        <span id="workshopsCount">8</span> workshops found
+                        <span id="workshopsCount">0</span> workshops found
                     </div>
                 </div>
-                <div id="workshopsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="workshopsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🔧</div>
+                        <h3 class="text-xl font-semibold mb-2">No Workshops Available</h3>
+                        <p>Be the first professional to join this category!</p>
+                        <button onclick="scrollToSection('join')" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Join as Professional</button>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -941,1032 +1024,274 @@
     </div>
 
     <script>
-        // Professional data for all service types
+        // Empty professional data - ready for real registrations
         const professionalData = {
-            plumbers: [
-                {
-                    id: 1,
-                    name: "Rajesh Kumar",
-                    experience: "12 years",
-                    experienceNum: 12,
-                    location: "Delhi",
-                    rating: 4.9,
-                    reviews: 156,
-                    rate: 800,
-                    rateDisplay: "₹800/day",
-                    phone: "+91 98765 43210",
-                    specialties: ["Pipe Installation", "Water Heater Repair", "Bathroom Fitting"],
-                    description: "Expert plumber with 12+ years experience in residential and commercial plumbing. Specializes in modern pipe installations and emergency repairs.",
-                    availability: "Available 24/7",
-                    verified: true,
-                    emergency: true
-                },
-                {
-                    id: 2,
-                    name: "Suresh Patel",
-                    experience: "8 years",
-                    experienceNum: 8,
-                    location: "Mumbai",
-                    rating: 4.7,
-                    reviews: 89,
-                    rate: 650,
-                    rateDisplay: "₹650/day",
-                    phone: "+91 98765 43211",
-                    specialties: ["Drainage Systems", "Leak Detection", "Pipe Repair"],
-                    description: "Skilled plumber specializing in drainage solutions and leak detection. Known for quick problem diagnosis and efficient repairs.",
-                    availability: "Mon-Sat, 8AM-8PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 3,
-                    name: "Mohammed Ali",
-                    experience: "15 years",
-                    experienceNum: 15,
-                    location: "Bangalore",
-                    rating: 4.8,
-                    reviews: 203,
-                    rate: 900,
-                    rateDisplay: "₹900/day",
-                    phone: "+91 98765 43212",
-                    specialties: ["Commercial Plumbing", "Industrial Systems", "Maintenance"],
-                    description: "Senior plumber with extensive experience in commercial and industrial plumbing systems. Expert in large-scale installations and maintenance.",
-                    availability: "Available 24/7",
-                    verified: true,
-                    emergency: true
-                },
-                {
-                    id: 4,
-                    name: "Amit Sharma",
-                    experience: "5 years",
-                    experienceNum: 5,
-                    location: "Chennai",
-                    rating: 4.6,
-                    reviews: 67,
-                    rate: 550,
-                    rateDisplay: "₹550/day",
-                    phone: "+91 98765 43213",
-                    specialties: ["Home Plumbing", "Fixture Installation", "Basic Repairs"],
-                    description: "Reliable plumber for home plumbing needs. Specializes in fixture installations, basic repairs, and maintenance work.",
-                    availability: "Mon-Fri, 9AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 5,
-                    name: "Vikram Singh",
-                    experience: "10 years",
-                    experienceNum: 10,
-                    location: "Pune",
-                    rating: 4.8,
-                    reviews: 134,
-                    rate: 750,
-                    rateDisplay: "₹750/day",
-                    phone: "+91 98765 43214",
-                    specialties: ["Emergency Repairs", "Pipe Replacement", "Water Systems"],
-                    description: "Emergency plumbing specialist available 24/7. Expert in urgent repairs, pipe replacements, and water system installations.",
-                    availability: "Available 24/7",
-                    verified: true,
-                    emergency: true
-                },
-                {
-                    id: 6,
-                    name: "Ravi Krishnan",
-                    experience: "7 years",
-                    experienceNum: 7,
-                    location: "Hyderabad",
-                    rating: 4.5,
-                    reviews: 78,
-                    rate: 600,
-                    rateDisplay: "₹600/day",
-                    phone: "+91 98765 43215",
-                    specialties: ["Bathroom Renovation", "Modern Fixtures", "Design Consultation"],
-                    description: "Creative plumber specializing in bathroom renovations and modern fixture installations. Offers design consultation services.",
-                    availability: "Tue-Sun, 10AM-7PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 7,
-                    name: "Deepak Gupta",
-                    experience: "3 years",
-                    experienceNum: 3,
-                    location: "Delhi",
-                    rating: 4.4,
-                    reviews: 45,
-                    rate: 450,
-                    rateDisplay: "₹450/day",
-                    phone: "+91 98765 43216",
-                    specialties: ["Basic Plumbing", "Maintenance", "Small Repairs"],
-                    description: "Young and enthusiastic plumber perfect for basic plumbing needs and regular maintenance. Affordable and reliable service.",
-                    availability: "Mon-Sat, 8AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 8,
-                    name: "Santosh Kumar",
-                    experience: "20 years",
-                    experienceNum: 20,
-                    location: "Mumbai",
-                    rating: 4.9,
-                    reviews: 287,
-                    rate: 1000,
-                    rateDisplay: "₹1000/day",
-                    phone: "+91 98765 43217",
-                    specialties: ["Master Plumber", "Complex Systems", "Training & Consultation"],
-                    description: "Master plumber with 20+ years experience. Handles the most complex plumbing systems and provides training to junior plumbers.",
-                    availability: "By Appointment",
-                    verified: true,
-                    emergency: true
-                },
-                {
-                    id: 9,
-                    name: "Manoj Yadav",
-                    experience: "6 years",
-                    experienceNum: 6,
-                    location: "Bangalore",
-                    rating: 4.6,
-                    reviews: 92,
-                    rate: 580,
-                    rateDisplay: "₹580/day",
-                    phone: "+91 98765 43218",
-                    specialties: ["Residential Plumbing", "Water Heaters", "Pump Installation"],
-                    description: "Residential plumbing expert with focus on water heater installations and pump systems. Known for clean and efficient work.",
-                    availability: "Mon-Sat, 9AM-7PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 10,
-                    name: "Ramesh Nair",
-                    experience: "11 years",
-                    experienceNum: 11,
-                    location: "Hyderabad",
-                    rating: 4.8,
-                    reviews: 165,
-                    rate: 820,
-                    rateDisplay: "₹820/day",
-                    phone: "+91 98765 43221",
-                    specialties: ["High-rise Plumbing", "Pressure Systems", "Complex Installations"],
-                    description: "Specialist in high-rise building plumbing and complex pressure systems. Expert in multi-story residential and commercial buildings.",
-                    availability: "Available 24/7",
-                    verified: true,
-                    emergency: true
+            plumbers: [],
+            electricians: [],
+            contractors: [],
+            civilengineers: [],
+            skilledlabor: [],
+            unskilledlabor: [],
+            painters: [],
+            carpenters: [],
+            machinery: [],
+            workshops: []
+        };
+
+        // Current filters and data
+        let currentFilters = {};
+        let filteredData = {};
+
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // If it's a service page, load the professionals
+            if (professionalData[pageId]) {
+                loadProfessionals(pageId);
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Load professionals for a category
+        function loadProfessionals(category) {
+            const data = professionalData[category] || [];
+            filteredData[category] = [...data];
+            renderProfessionals(category);
+            updateCount(category);
+        }
+
+        // Render professionals
+        function renderProfessionals(category) {
+            const grid = document.getElementById(category + 'Grid');
+            const data = filteredData[category] || [];
+            
+            if (data.length === 0) {
+                // Show empty state
+                const emptyStateIcon = {
+                    plumbers: '🔧',
+                    electricians: '⚡',
+                    contractors: '🏗️',
+                    civilengineers: '👨‍💼',
+                    skilledlabor: '👷‍♂️',
+                    unskilledlabor: '👷',
+                    painters: '🎨',
+                    carpenters: '🔨',
+                    machinery: '🚜',
+                    workshops: '🔧'
+                };
+                
+                const categoryNames = {
+                    plumbers: 'Plumbers',
+                    electricians: 'Electricians',
+                    contractors: 'Contractors',
+                    civilengineers: 'Civil Engineers',
+                    skilledlabor: 'Skilled Labor',
+                    unskilledlabor: 'Unskilled Labor',
+                    painters: 'Painters',
+                    carpenters: 'Carpenters',
+                    machinery: 'Machinery Operators',
+                    workshops: 'Workshops'
+                };
+                
+                grid.innerHTML = `
+                    <div class="empty-state col-span-full">
+                        <div class="empty-state-icon">${emptyStateIcon[category]}</div>
+                        <h3 class="text-xl font-semibold mb-2">No ${categoryNames[category]} Available</h3>
+                        <p>Be the first professional to join this category!</p>
+                        <button onclick="showPage('home'); setTimeout(() => scrollToSection('join'), 100);" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Join as Professional</button>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Render professional cards (when data exists)
+            grid.innerHTML = data.map(professional => `
+                <div class="professional-card">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">${professional.name}</h3>
+                            <p class="text-gray-600">${professional.experience} experience</p>
+                            <p class="text-gray-600">📍 ${professional.location}</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="flex items-center mb-1">
+                                <span class="text-yellow-500">⭐</span>
+                                <span class="font-semibold ml-1">${professional.rating}</span>
+                                <span class="text-gray-500 text-sm ml-1">(${professional.reviews})</span>
+                            </div>
+                            <p class="text-lg font-bold text-green-600">${professional.rateDisplay}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            ${professional.specialties.map(specialty => 
+                                `<span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">${specialty}</span>`
+                            ).join('')}
+                        </div>
+                        <p class="text-gray-700 text-sm">${professional.description}</p>
+                    </div>
+                    
+                    <div class="flex justify-between items-center pt-4 border-t border-gray-200">
+                        <div class="text-sm text-gray-600">
+                            <p>📞 ${professional.phone}</p>
+                            <p>🕒 ${professional.availability}</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            ${professional.verified ? '<span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">✓ Verified</span>' : ''}
+                            ${professional.emergency ? '<span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">🚨 Emergency</span>' : ''}
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 flex space-x-2">
+                        <button onclick="contactProfessional('${professional.phone}')" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">Contact</button>
+                        <button onclick="viewProfile(${professional.id})" class="flex-1 border border-blue-600 text-blue-600 py-2 px-4 rounded-lg hover:bg-blue-50 transition-colors">View Profile</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Update count
+        function updateCount(category) {
+            const countElement = document.getElementById(category + 'Count');
+            if (countElement) {
+                countElement.textContent = filteredData[category]?.length || 0;
+            }
+        }
+
+        // Filter functions (ready for when data exists)
+        function filterByExperience(category, experience) {
+            // Update active filter button
+            const filterButtons = document.querySelectorAll(`#${category} .filter-btn`);
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Apply filter (when data exists)
+            const data = professionalData[category] || [];
+            if (experience === 'all') {
+                filteredData[category] = [...data];
+            } else {
+                filteredData[category] = data.filter(professional => {
+                    const exp = professional.experienceNum;
+                    switch(experience) {
+                        case '0-2': return exp <= 2;
+                        case '3-5': return exp >= 3 && exp <= 5;
+                        case '6-10': return exp >= 6 && exp <= 10;
+                        case '10+': return exp > 10;
+                        default: return true;
+                    }
+                });
+            }
+            
+            renderProfessionals(category);
+            updateCount(category);
+        }
+
+        function filterByLocation(category) {
+            const location = document.getElementById(category + 'LocationFilter').value;
+            const data = professionalData[category] || [];
+            
+            if (location === 'all') {
+                filteredData[category] = [...data];
+            } else {
+                filteredData[category] = data.filter(professional => 
+                    professional.location === location
+                );
+            }
+            
+            renderProfessionals(category);
+            updateCount(category);
+        }
+
+        function sortProfessionals(category) {
+            const sortBy = document.getElementById(category + 'SortBy').value;
+            const data = filteredData[category] || [];
+            
+            data.sort((a, b) => {
+                switch(sortBy) {
+                    case 'rating': return b.rating - a.rating;
+                    case 'experience': return b.experienceNum - a.experienceNum;
+                    case 'price-low': return a.rate - b.rate;
+                    case 'price-high': return b.rate - a.rate;
+                    default: return 0;
                 }
-            ],
-            electricians: [
-                {
-                    id: 1,
-                    name: "Arun Electricals",
-                    experience: "14 years",
-                    experienceNum: 14,
-                    location: "Delhi",
-                    rating: 4.9,
-                    reviews: 198,
-                    rate: 850,
-                    rateDisplay: "₹850/day",
-                    phone: "+91 98765 54321",
-                    specialties: ["Industrial Wiring", "Panel Installation", "Motor Repair"],
-                    description: "Certified electrician with expertise in industrial and commercial electrical systems. Licensed for high-voltage installations.",
-                    availability: "Available 24/7",
-                    verified: true,
-                    emergency: true
-                },
-                {
-                    id: 2,
-                    name: "Pradeep Kumar",
-                    experience: "9 years",
-                    experienceNum: 9,
-                    location: "Mumbai",
-                    rating: 4.7,
-                    reviews: 134,
-                    rate: 700,
-                    rateDisplay: "₹700/day",
-                    phone: "+91 98765 54322",
-                    specialties: ["Home Wiring", "LED Installation", "Safety Systems"],
-                    description: "Residential electrical specialist focusing on modern home automation and energy-efficient lighting solutions.",
-                    availability: "Mon-Sat, 8AM-7PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 3,
-                    name: "Sanjay Electrician",
-                    experience: "16 years",
-                    experienceNum: 16,
-                    location: "Bangalore",
-                    rating: 4.8,
-                    reviews: 245,
-                    rate: 950,
-                    rateDisplay: "₹950/day",
-                    phone: "+91 98765 54323",
-                    specialties: ["Solar Installation", "Inverter Setup", "Green Energy"],
-                    description: "Green energy specialist with extensive experience in solar panel installations and renewable energy systems.",
-                    availability: "Available 24/7",
-                    verified: true,
-                    emergency: true
-                },
-                {
-                    id: 4,
-                    name: "Raman Singh",
-                    experience: "6 years",
-                    experienceNum: 6,
-                    location: "Chennai",
-                    rating: 4.5,
-                    reviews: 87,
-                    rate: 600,
-                    rateDisplay: "₹600/day",
-                    phone: "+91 98765 54324",
-                    specialties: ["Basic Wiring", "Fan Installation", "Switch Repair"],
-                    description: "Reliable electrician for basic electrical needs and home maintenance. Known for punctuality and fair pricing.",
-                    availability: "Mon-Fri, 9AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 5,
-                    name: "Mukesh Electrical",
-                    experience: "11 years",
-                    experienceNum: 11,
-                    location: "Pune",
-                    rating: 4.8,
-                    reviews: 156,
-                    rate: 780,
-                    rateDisplay: "₹780/day",
-                    phone: "+91 98765 54325",
-                    specialties: ["Emergency Repairs", "Circuit Troubleshooting", "Power Restoration"],
-                    description: "Emergency electrical services specialist. Expert in quick diagnosis and repair of electrical faults and power issues.",
-                    availability: "Available 24/7",
-                    verified: true,
-                    emergency: true
-                },
-                {
-                    id: 6,
-                    name: "Naveen Kumar",
-                    experience: "8 years",
-                    experienceNum: 8,
-                    location: "Hyderabad",
-                    rating: 4.6,
-                    reviews: 112,
-                    rate: 650,
-                    rateDisplay: "₹650/day",
-                    phone: "+91 98765 54326",
-                    specialties: ["Smart Home Setup", "Automation", "Security Systems"],
-                    description: "Modern electrician specializing in smart home installations and home automation systems. Tech-savvy and innovative.",
-                    availability: "Tue-Sun, 10AM-8PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 7,
-                    name: "Kishore Reddy",
-                    experience: "4 years",
-                    experienceNum: 4,
-                    location: "Delhi",
-                    rating: 4.4,
-                    reviews: 63,
-                    rate: 500,
-                    rateDisplay: "₹500/day",
-                    phone: "+91 98765 54327",
-                    specialties: ["Appliance Repair", "Basic Installation", "Maintenance"],
-                    description: "Young electrician perfect for appliance repairs and basic electrical maintenance. Affordable and learning-oriented.",
-                    availability: "Mon-Sat, 8AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 8,
-                    name: "Master Electrician Sharma",
-                    experience: "22 years",
-                    experienceNum: 22,
-                    location: "Mumbai",
-                    rating: 4.9,
-                    reviews: 312,
-                    rate: 1200,
-                    rateDisplay: "₹1200/day",
-                    phone: "+91 98765 54328",
-                    specialties: ["Master Electrician", "Training", "Complex Projects"],
-                    description: "Master electrician with over 20 years experience. Handles the most complex electrical projects and trains junior electricians.",
-                    availability: "By Appointment",
-                    verified: true,
-                    emergency: true
-                },
-                {
-                    id: 9,
-                    name: "Vinod Electrical Works",
-                    experience: "7 years",
-                    experienceNum: 7,
-                    location: "Bangalore",
-                    rating: 4.6,
-                    reviews: 98,
-                    rate: 620,
-                    rateDisplay: "₹620/day",
-                    phone: "+91 98765 54329",
-                    specialties: ["Office Wiring", "Commercial Setup", "Maintenance Contracts"],
-                    description: "Commercial electrical specialist with focus on office buildings and commercial establishments. Offers maintenance contracts.",
-                    availability: "Mon-Sat, 9AM-7PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 10,
-                    name: "Rajesh Power Solutions",
-                    experience: "13 years",
-                    experienceNum: 13,
-                    location: "Chennai",
-                    rating: 4.7,
-                    reviews: 187,
-                    rate: 880,
-                    rateDisplay: "₹880/day",
-                    phone: "+91 98765 54330",
-                    specialties: ["Power Distribution", "Transformer Work", "High Voltage"],
-                    description: "Power systems specialist with expertise in distribution networks and high-voltage electrical work. Licensed for utility work.",
-                    availability: "Available 24/7",
-                    verified: true,
-                    emergency: true
-                }
-            ],
-            contractors: [
-                {
-                    id: 1,
-                    name: "BuildMax Constructions",
-                    experience: "15 years",
-                    experienceNum: 15,
-                    location: "Delhi",
-                    rating: 4.9,
-                    reviews: 234,
-                    rate: 2500,
-                    rateDisplay: "₹2500/day",
-                    phone: "+91 98765 76543",
-                    specialties: ["Residential Construction", "Commercial Buildings", "Project Management"],
-                    description: "Leading construction company with 15+ years experience in residential and commercial projects. Full project management services.",
-                    availability: "Mon-Sat, 9AM-7PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 2,
-                    name: "Sharma Builders",
-                    experience: "12 years",
-                    experienceNum: 12,
-                    location: "Mumbai",
-                    rating: 4.7,
-                    reviews: 187,
-                    rate: 2200,
-                    rateDisplay: "₹2200/day",
-                    phone: "+91 98765 76544",
-                    specialties: ["Home Renovation", "Interior Design", "Modular Construction"],
-                    description: "Renovation specialists with expertise in home makeovers and interior design. Modern construction techniques and quality materials.",
-                    availability: "Mon-Sat, 8AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 3,
-                    name: "TechBuild Solutions",
-                    experience: "18 years",
-                    experienceNum: 18,
-                    location: "Bangalore",
-                    rating: 4.8,
-                    reviews: 298,
-                    rate: 3000,
-                    rateDisplay: "₹3000/day",
-                    phone: "+91 98765 76545",
-                    specialties: ["Smart Buildings", "Green Construction", "Technology Integration"],
-                    description: "Advanced construction company specializing in smart buildings and green construction. Technology-driven approach to modern construction.",
-                    availability: "Mon-Fri, 9AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 4,
-                    name: "Reliable Contractors",
-                    experience: "10 years",
-                    experienceNum: 10,
-                    location: "Chennai",
-                    rating: 4.6,
-                    reviews: 145,
-                    rate: 1800,
-                    rateDisplay: "₹1800/day",
-                    phone: "+91 98765 76546",
-                    specialties: ["Small Projects", "Repairs", "Maintenance"],
-                    description: "Reliable contractor for small to medium projects, repairs, and maintenance work. Known for timely completion and fair pricing.",
-                    availability: "Mon-Sat, 8AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 5,
-                    name: "Elite Construction Group",
-                    experience: "20 years",
-                    experienceNum: 20,
-                    location: "Pune",
-                    rating: 4.9,
-                    reviews: 356,
-                    rate: 3500,
-                    rateDisplay: "₹3500/day",
-                    phone: "+91 98765 76547",
-                    specialties: ["Luxury Projects", "High-end Construction", "Premium Materials"],
-                    description: "Premium construction company specializing in luxury residential and commercial projects. High-end materials and superior craftsmanship.",
-                    availability: "By Appointment",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 6,
-                    name: "Quick Build Services",
-                    experience: "8 years",
-                    experienceNum: 8,
-                    location: "Hyderabad",
-                    rating: 4.5,
-                    reviews: 112,
-                    rate: 1500,
-                    rateDisplay: "₹1500/day",
-                    phone: "+91 98765 76548",
-                    specialties: ["Fast Construction", "Emergency Repairs", "Quick Solutions"],
-                    description: "Fast construction services for urgent projects and emergency repairs. Quick turnaround time without compromising quality.",
-                    availability: "Available 24/7",
-                    verified: true,
-                    emergency: true
-                },
-                {
-                    id: 7,
-                    name: "Heritage Builders",
-                    experience: "25 years",
-                    experienceNum: 25,
-                    location: "Delhi",
-                    rating: 4.8,
-                    reviews: 423,
-                    rate: 4000,
-                    rateDisplay: "₹4000/day",
-                    phone: "+91 98765 76549",
-                    specialties: ["Heritage Restoration", "Traditional Construction", "Conservation"],
-                    description: "Specialized in heritage building restoration and traditional construction methods. Expert in conservation and historical building techniques.",
-                    availability: "Mon-Fri, 10AM-5PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 8,
-                    name: "Modern Constructions",
-                    experience: "14 years",
-                    experienceNum: 14,
-                    location: "Mumbai",
-                    rating: 4.7,
-                    reviews: 203,
-                    rate: 2800,
-                    rateDisplay: "₹2800/day",
-                    phone: "+91 98765 76550",
-                    specialties: ["Modern Architecture", "Sustainable Building", "Energy Efficient"],
-                    description: "Modern construction company focusing on contemporary architecture and sustainable building practices. Energy-efficient solutions.",
-                    availability: "Mon-Sat, 9AM-6PM",
-                    verified: true,
-                    emergency: false
-                }
-            ],
-            civilengineers: [
-                {
-                    id: 1,
-                    name: "Dr. Rajesh Mehta",
-                    experience: "18 years",
-                    experienceNum: 18,
-                    location: "Delhi",
-                    rating: 4.9,
-                    reviews: 156,
-                    rate: 3500,
-                    rateDisplay: "₹3500/day",
-                    phone: "+91 98765 87654",
-                    specialties: ["Structural Design", "Project Planning", "Quality Control"],
-                    description: "Senior Civil Engineer with PhD in Structural Engineering. Expert in high-rise building design and complex infrastructure projects.",
-                    availability: "Mon-Fri, 9AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 2,
-                    name: "Priya Sharma",
-                    experience: "12 years",
-                    experienceNum: 12,
-                    location: "Mumbai",
-                    rating: 4.8,
-                    reviews: 134,
-                    rate: 2800,
-                    rateDisplay: "₹2800/day",
-                    phone: "+91 98765 87655",
-                    specialties: ["Residential Design", "Site Supervision", "Cost Estimation"],
-                    description: "Experienced civil engineer specializing in residential projects. Expert in modern construction techniques and sustainable design.",
-                    availability: "Mon-Sat, 8AM-7PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 3,
-                    name: "Eng. Suresh Kumar",
-                    experience: "22 years",
-                    experienceNum: 22,
-                    location: "Bangalore",
-                    rating: 4.9,
-                    reviews: 298,
-                    rate: 4200,
-                    rateDisplay: "₹4200/day",
-                    phone: "+91 98765 87656",
-                    specialties: ["Infrastructure Projects", "Bridge Design", "Highway Planning"],
-                    description: "Senior infrastructure engineer with expertise in large-scale projects. Former government engineer with extensive public works experience.",
-                    availability: "By Appointment",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 4,
-                    name: "Anita Patel",
-                    experience: "8 years",
-                    experienceNum: 8,
-                    location: "Chennai",
-                    rating: 4.6,
-                    reviews: 89,
-                    rate: 2200,
-                    rateDisplay: "₹2200/day",
-                    phone: "+91 98765 87657",
-                    specialties: ["Environmental Engineering", "Water Management", "Green Building"],
-                    description: "Environmental civil engineer focusing on sustainable construction and water management systems. LEED certified professional.",
-                    availability: "Mon-Fri, 9AM-5PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 5,
-                    name: "Vikram Reddy",
-                    experience: "15 years",
-                    experienceNum: 15,
-                    location: "Pune",
-                    rating: 4.7,
-                    reviews: 187,
-                    rate: 3200,
-                    rateDisplay: "₹3200/day",
-                    phone: "+91 98765 87658",
-                    specialties: ["Commercial Projects", "Industrial Design", "Project Management"],
-                    description: "Commercial and industrial civil engineer with PMP certification. Expert in factory and warehouse construction projects.",
-                    availability: "Mon-Sat, 9AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 6,
-                    name: "Kavita Singh",
-                    experience: "10 years",
-                    experienceNum: 10,
-                    location: "Hyderabad",
-                    rating: 4.5,
-                    reviews: 112,
-                    rate: 2500,
-                    rateDisplay: "₹2500/day",
-                    phone: "+91 98765 87659",
-                    specialties: ["Geotechnical Engineering", "Foundation Design", "Soil Analysis"],
-                    description: "Geotechnical specialist with expertise in foundation design and soil mechanics. Essential for complex foundation projects.",
-                    availability: "Mon-Fri, 8AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 7,
-                    name: "Amit Joshi",
-                    experience: "6 years",
-                    experienceNum: 6,
-                    location: "Delhi",
-                    rating: 4.4,
-                    reviews: 76,
-                    rate: 1800,
-                    rateDisplay: "₹1800/day",
-                    phone: "+91 98765 87660",
-                    specialties: ["CAD Design", "3D Modeling", "Technical Drawing"],
-                    description: "Young engineer specializing in CAD design and 3D modeling. Expert in AutoCAD, Revit, and modern design software.",
-                    availability: "Mon-Sat, 9AM-7PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 8,
-                    name: "Dr. Meera Gupta",
-                    experience: "20 years",
-                    experienceNum: 20,
-                    location: "Mumbai",
-                    rating: 4.8,
-                    reviews: 245,
-                    rate: 3800,
-                    rateDisplay: "₹3800/day",
-                    phone: "+91 98765 87661",
-                    specialties: ["Earthquake Engineering", "Seismic Design", "Risk Assessment"],
-                    description: "Earthquake engineering specialist with PhD in Seismic Design. Expert in earthquake-resistant construction and risk assessment.",
-                    availability: "Mon-Fri, 10AM-5PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 9,
-                    name: "Ravi Agarwal",
-                    experience: "14 years",
-                    experienceNum: 14,
-                    location: "Bangalore",
-                    rating: 4.7,
-                    reviews: 167,
-                    rate: 2900,
-                    rateDisplay: "₹2900/day",
-                    phone: "+91 98765 87662",
-                    specialties: ["Transportation Engineering", "Traffic Planning", "Road Design"],
-                    description: "Transportation engineer with expertise in road design and traffic planning. Specialist in urban infrastructure development.",
-                    availability: "Mon-Sat, 8AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 10,
-                    name: "Sunita Rao",
-                    experience: "11 years",
-                    experienceNum: 11,
-                    location: "Chennai",
-                    rating: 4.6,
-                    reviews: 134,
-                    rate: 2600,
-                    rateDisplay: "₹2600/day",
-                    phone: "+91 98765 87663",
-                    specialties: ["Construction Management", "Quality Assurance", "Safety Planning"],
-                    description: "Construction management specialist with focus on quality assurance and safety planning. Expert in project coordination and supervision.",
-                    availability: "Mon-Fri, 9AM-6PM",
-                    verified: true,
-                    emergency: false
-                }
-            ],
-            skilledlabor: [
-                {
-                    id: 1,
-                    name: "Master Mason Raju",
-                    experience: "16 years",
-                    experienceNum: 16,
-                    location: "Delhi",
-                    rating: 4.8,
-                    reviews: 198,
-                    rate: 800,
-                    rateDisplay: "₹800/day",
-                    phone: "+91 98765 98765",
-                    specialties: ["Stone Masonry", "Brick Work", "Architectural Details"],
-                    description: "Master mason with 16+ years experience in traditional and modern masonry. Expert in decorative stonework and architectural details.",
-                    availability: "Mon-Sat, 7AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 2,
-                    name: "Welder Suresh",
-                    experience: "12 years",
-                    experienceNum: 12,
-                    location: "Mumbai",
-                    rating: 4.7,
-                    reviews: 156,
-                    rate: 750,
-                    rateDisplay: "₹750/day",
-                    phone: "+91 98765 98766",
-                    specialties: ["Arc Welding", "Gas Welding", "Steel Fabrication"],
-                    description: "Certified welder with expertise in all types of welding. Specializes in structural steel work and custom fabrication.",
-                    availability: "Mon-Sat, 8AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 3,
-                    name: "Tile Expert Mohan",
-                    experience: "14 years",
-                    experienceNum: 14,
-                    location: "Bangalore",
-                    rating: 4.9,
-                    reviews: 234,
-                    rate: 700,
-                    rateDisplay: "₹700/day",
-                    phone: "+91 98765 98767",
-                    specialties: ["Ceramic Tiles", "Marble Work", "Designer Patterns"],
-                    description: "Master tile installer with expertise in all types of tiles. Known for precision work and creative pattern designs.",
-                    availability: "Mon-Fri, 8AM-5PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 4,
-                    name: "Steel Fixer Ramesh",
-                    experience: "10 years",
-                    experienceNum: 10,
-                    location: "Chennai",
-                    rating: 4.6,
-                    reviews: 123,
-                    rate: 650,
-                    rateDisplay: "₹650/day",
-                    phone: "+91 98765 98768",
-                    specialties: ["Reinforcement Steel", "Structural Work", "Foundation Steel"],
-                    description: "Expert steel fixer with 10+ years experience in reinforcement work. Specializes in complex structural steel arrangements.",
-                    availability: "Mon-Sat, 7AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 5,
-                    name: "Plasterer Vijay",
-                    experience: "11 years",
-                    experienceNum: 11,
-                    location: "Pune",
-                    rating: 4.7,
-                    reviews: 167,
-                    rate: 600,
-                    rateDisplay: "₹600/day",
-                    phone: "+91 98765 98769",
-                    specialties: ["Wall Plastering", "Ceiling Work", "Texture Finish"],
-                    description: "Professional plasterer with expertise in smooth finishes and decorative textures. Known for quality workmanship.",
-                    availability: "Mon-Sat, 8AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 6,
-                    name: "Waterproofing Expert Ashok",
-                    experience: "9 years",
-                    experienceNum: 9,
-                    location: "Hyderabad",
-                    rating: 4.5,
-                    reviews: 98,
-                    rate: 550,
-                    rateDisplay: "₹550/day",
-                    phone: "+91 98765 98770",
-                    specialties: ["Roof Waterproofing", "Basement Sealing", "Leak Repair"],
-                    description: "Waterproofing specialist with expertise in all types of sealing work. Essential for monsoon preparation and leak prevention.",
-                    availability: "Mon-Fri, 9AM-5PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 7,
-                    name: "Formwork Specialist Ganesh",
-                    experience: "13 years",
-                    experienceNum: 13,
-                    location: "Delhi",
-                    rating: 4.8,
-                    reviews: 189,
-                    rate: 720,
-                    rateDisplay: "₹720/day",
-                    phone: "+91 98765 98771",
-                    specialties: ["Concrete Formwork", "Shuttering", "Complex Shapes"],
-                    description: "Formwork expert with 13+ years experience in concrete work. Specializes in complex architectural shapes and structures.",
-                    availability: "Mon-Sat, 7AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 8,
-                    name: "Flooring Expert Dinesh",
-                    experience: "8 years",
-                    experienceNum: 8,
-                    location: "Mumbai",
-                    rating: 4.6,
-                    reviews: 134,
-                    rate: 580,
-                    rateDisplay: "₹580/day",
-                    phone: "+91 98765 98772",
-                    specialties: ["Wooden Flooring", "Laminate", "Vinyl Installation"],
-                    description: "Flooring specialist with expertise in all types of floor installations. Known for precision and attention to detail.",
-                    availability: "Mon-Sat, 8AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 9,
-                    name: "Roofing Expert Prakash",
-                    experience: "15 years",
-                    experienceNum: 15,
-                    location: "Bangalore",
-                    rating: 4.7,
-                    reviews: 201,
-                    rate: 780,
-                    rateDisplay: "₹780/day",
-                    phone: "+91 98765 98773",
-                    specialties: ["Metal Roofing", "Tile Roofing", "Roof Repair"],
-                    description: "Roofing specialist with 15+ years experience in all types of roofing work. Expert in both traditional and modern roofing systems.",
-                    availability: "Mon-Sat, 7AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 10,
-                    name: "Concrete Specialist Manoj",
-                    experience: "12 years",
-                    experienceNum: 12,
-                    location: "Chennai",
-                    rating: 4.8,
-                    reviews: 176,
-                    rate: 700,
-                    rateDisplay: "₹700/day",
-                    phone: "+91 98765 98774",
-                    specialties: ["Concrete Pouring", "Finishing", "Decorative Concrete"],
-                    description: "Concrete specialist with expertise in all aspects of concrete work. Known for smooth finishes and decorative concrete techniques.",
-                    availability: "Mon-Sat, 7AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 11,
-                    name: "Insulation Expert Ravi",
-                    experience: "7 years",
-                    experienceNum: 7,
-                    location: "Pune",
-                    rating: 4.5,
-                    reviews: 89,
-                    rate: 520,
-                    rateDisplay: "₹520/day",
-                    phone: "+91 98765 98775",
-                    specialties: ["Thermal Insulation", "Sound Proofing", "Energy Efficiency"],
-                    description: "Insulation specialist focusing on thermal and acoustic insulation. Expert in energy-efficient building solutions.",
-                    availability: "Mon-Fri, 8AM-5PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 12,
-                    name: "Glass Work Expert Santosh",
-                    experience: "10 years",
-                    experienceNum: 10,
-                    location: "Hyderabad",
-                    rating: 4.6,
-                    reviews: 145,
-                    rate: 650,
-                    rateDisplay: "₹650/day",
-                    phone: "+91 98765 98776",
-                    specialties: ["Glass Installation", "Window Fitting", "Glazing Work"],
-                    description: "Glass work specialist with 10+ years experience in all types of glass installations. Expert in modern glazing techniques.",
-                    availability: "Mon-Sat, 8AM-6PM",
-                    verified: true,
-                    emergency: false
-                }
-            ],
-            unskilledlabor: [
-                {
-                    id: 1,
-                    name: "Labor Team - Rajesh Group",
-                    experience: "5 years",
-                    experienceNum: 5,
-                    location: "Delhi",
-                    rating: 4.5,
-                    reviews: 89,
-                    rate: 400,
-                    rateDisplay: "₹400/day",
-                    phone: "+91 98765 11111",
-                    specialties: ["Material Handling", "Site Cleaning", "General Labor"],
-                    description: "Reliable labor team for general construction work. Experienced in material handling, site preparation, and cleaning work.",
-                    availability: "Available 7 days",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 2,
-                    name: "Construction Helpers - Mumbai",
-                    experience: "3 years",
-                    experienceNum: 3,
-                    location: "Mumbai",
-                    rating: 4.3,
-                    reviews: 67,
-                    rate: 380,
-                    rateDisplay: "₹380/day",
-                    phone: "+91 98765 11112",
-                    specialties: ["Loading/Unloading", "Digging", "Carrying Materials"],
-                    description: "Hardworking labor team for basic construction tasks. Reliable for loading, unloading, and material transportation.",
-                    availability: "Mon-Sat, 7AM-7PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 3,
-                    name: "Site Workers - Bangalore Team",
-                    experience: "4 years",
-                    experienceNum: 4,
-                    location: "Bangalore",
-                    rating: 4.4,
-                    reviews: 78,
-                    rate: 420,
-                    rateDisplay: "₹420/day",
-                    phone: "+91 98765 11113",
-                    specialties: ["Demolition Help", "Debris Removal", "Site Preparation"],
-                    description: "Experienced site workers for demolition assistance and debris removal. Good for site preparation and cleaning work.",
-                    availability: "Mon-Sat, 8AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 4,
-                    name: "General Labor - Chennai",
-                    experience: "2 years",
-                    experienceNum: 2,
-                    location: "Chennai",
-                    rating: 4.2,
-                    reviews: 45,
-                    rate: 350,
-                    rateDisplay: "₹350/day",
-                    phone: "+91 98765 11114",
-                    specialties: ["Basic Construction", "Mixing Concrete", "Tool Assistance"],
-                    description: "Basic labor team for simple construction tasks. Good for concrete mixing, tool assistance, and general help.",
-                    availability: "Mon-Fri, 8AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 5,
-                    name: "Helper Team - Pune",
-                    experience: "6 years",
-                    experienceNum: 6,
-                    location: "Pune",
-                    rating: 4.6,
-                    reviews: 112,
-                    rate: 450,
-                    rateDisplay: "₹450/day",
-                    phone: "+91 98765 11115",
-                    specialties: ["Skilled Assistance", "Material Organization", "Quality Support"],
-                    description: "Experienced helper team that can assist skilled workers. Good for material organization and providing quality support.",
-                    availability: "Mon-Sat, 7AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 6,
-                    name: "Construction Crew - Hyderabad",
-                    experience: "4 years",
-                    experienceNum: 4,
-                    location: "Hyderabad",
-                    rating: 4.3,
-                    reviews: 67,
-                    rate: 390,
-                    rateDisplay: "₹390/day",
-                    phone: "+91 98765 11116",
-                    specialties: ["Earth Work", "Foundation Help", "Basic Tasks"],
-                    description: "Construction crew for earth work and foundation assistance. Reliable for basic construction tasks and manual work.",
-                    availability: "Mon-Sat, 8AM-6PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 7,
-                    name: "Labor Contractors - Delhi NCR",
-                    experience: "8 years",
-                    experienceNum: 8,
-                    location: "Delhi",
-                    rating: 4.7,
-                    reviews: 156,
-                    rate: 480,
-                    rateDisplay: "₹480/day",
-                    phone: "+91 98765 11117",
-                    specialties: ["Large Projects", "Team Management", "Bulk Labor"],
-                    description: "Labor contractors providing teams for large projects. Experienced in managing bulk labor requirements and team coordination.",
-                    availability: "Available 24/7",
-                    verified: true,
-                    emergency: true
-                },
-                {
-                    id: 8,
-                    name: "Site Cleaners - Mumbai",
-                    experience: "3 years",
-                    experienceNum: 3,
-                    location: "Mumbai",
-                    rating: 4.2,
-                    reviews: 56,
-                    rate: 320,
-                    rateDisplay: "₹320/day",
-                    phone: "+91 98765 11118",
-                    specialties: ["Site Cleaning", "Waste Management", "Final Cleanup"],
-                    description: "Specialized in site cleaning and waste management. Perfect for final cleanup and maintaining clean construction sites.",
-                    availability: "Mon-Sat, 9AM-5PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 9,
-                    name: "Material Handlers - Bangalore",
-                    experience: "5 years",
-                    experienceNum: 5,
-                    location: "Bangalore",
-                    rating: 4.5,
-                    reviews: 89,
-                    rate: 430,
-                    rateDisplay: "₹430/day",
-                    phone: "+91 98765 11119",
-                    specialties: ["Heavy Lifting", "Material Transport", "Warehouse Work"],
-                    description: "Specialized material handlers for heavy lifting and transport. Experienced in warehouse work and material management.",
-                    availability: "Mon-Sat, 7AM-7PM",
-                    verified: true,
-                    emergency: false
-                },
-                {
-                    id: 10,
-                    name: "General Workers - Chennai",
-                    experience: "4 years",
-                    experienceNum: 4,
-                    location: "Chennai",
-                    rating: 4.4,
-                    reviews: 73,
-                    rate: 400,
-                    rateDisplay: "₹400/day",
-                    phone: "+91 98765 11120",
-                    specialties: ["
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9730254e75e5596c',t:'MTc1NTg0MjM4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+            });
+            
+            renderProfessionals(category);
+        }
+
+        // Contact and profile functions
+        function contactProfessional(phone) {
+            window.open(`tel:${phone}`, '_self');
+        }
+
+        function viewProfile(id) {
+            alert('Profile viewing feature will be available soon!');
+        }
+
+        // Modal functions
+        function showLoginModal() {
+            document.getElementById('loginModal').classList.remove('hidden');
+        }
+
+        function hideLoginModal() {
+            document.getElementById('loginModal').classList.add('hidden');
+        }
+
+        function showSignupModal() {
+            document.getElementById('signupModal').classList.remove('hidden');
+        }
+
+        function hideSignupModal() {
+            document.getElementById('signupModal').classList.add('hidden');
+        }
+
+        // Form submissions
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Login functionality will be available soon!');
+            hideLoginModal();
+        });
+
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Signup functionality will be available soon!');
+            hideSignupModal();
+        });
+
+        document.getElementById('professionalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Professional registration submitted! We will contact you soon.');
+            this.reset();
+        });
+
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load home page by default
+            showPage('home');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97335a5935be9cd7',t:'MTc1NTg3NjAxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
