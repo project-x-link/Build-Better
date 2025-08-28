@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:5000"; // 🔑 change this when you deploy
+fetch("https://build-better-backend.onrender.com/api/data")
 
 // -------------------- PROFESSIONAL REGISTRATION --------------------
 document.getElementById("professionalForm")?.addEventListener("submit", async (e) => {
