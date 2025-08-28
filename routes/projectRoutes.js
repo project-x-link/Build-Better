@@ -9,6 +9,10 @@ router.post("/", authMiddleware, async (req, res) => {
   try {
     const { title, description, budget, location } = req.body;
 
+    if (!title || !description) {
+      return res.status(400).json({ error: "Title and description are required" });
+    }
+
     const newProject = new Project({
       title,
       description,
@@ -18,7 +22,7 @@ router.post("/", authMiddleware, async (req, res) => {
     });
 
     await newProject.save();
-    res.json(newProject);
+    res.status(201).json(newProject);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -34,7 +38,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Get projects by a specific user
+// Get projects by the logged-in user
 router.get("/my-projects", authMiddleware, async (req, res) => {
   try {
     const projects = await Project.find({ userId: req.user.id });
