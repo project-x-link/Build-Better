@@ -24,7 +24,7 @@ app.use(cors({
     "https://project-x-link.github.io" // GitHub Pages frontend
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
+  credentials: true,
    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
