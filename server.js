@@ -8,6 +8,7 @@ import Project from "./models/Project.js";
 import Service from "./models/Service.js";
 import professionalRoutes from "./routes/professionals.js";
 import projectRoutes from "./routes/projectRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -24,6 +25,7 @@ app.use(cors({
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
+   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 // ✅ MongoDB Connection (use env variable!)
@@ -34,7 +36,10 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log("✅ MongoDB connected"))
 .catch(err => console.error("❌ MongoDB connection error:", err));
 
+
+
 // ✅ Routes
+app.use("/api/auth", authRoutes); 
 app.use("/api/professionals", professionalRoutes);
 app.use("/api/projects", projectRoutes);
 
