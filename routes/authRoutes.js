@@ -44,4 +44,21 @@ router.post("/login", async (req, res) => {
 
     // Compare password
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(400).json({ error: "Invalid credentials"
+    if (!isMatch) return res.status(400).json({ error: "Invalid credentials" });
+
+    // Generate JWT
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
+
+    res.json({ token, user: { id: user._id, name: user.name, email: user.email } });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// 👉 Alias: /signin → /login
+router.post("/signin", (req, res, next) => {
+  req.url = "/login";
+  next("route");
+});
+
+export default router;
