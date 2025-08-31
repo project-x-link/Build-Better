@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 
 const router = express.Router();
 
-// Register
+// ---------------- Register ----------------
 router.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -28,7 +28,13 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// Login
+// 👉 Alias: /signup → /register
+router.post("/signup", (req, res, next) => {
+  req.url = "/register";
+  next("route");
+});
+
+// ---------------- Login ----------------
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -38,15 +44,4 @@ router.post("/login", async (req, res) => {
 
     // Compare password
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(400).json({ error: "Invalid credentials" });
-
-    // Generate JWT
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
-
-    res.json({ token, user: { id: user._id, name: user.name, email: user.email } });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-export default router;
+    if (!isMatch) return res.status(400).json({ error: "Invalid credentials"
