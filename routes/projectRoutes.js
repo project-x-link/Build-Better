@@ -4,7 +4,7 @@ import authMiddleware from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-// Create a project (only logged-in users)
+// -------------------- CREATE PROJECT --------------------
 router.post("/", authMiddleware, async (req, res) => {
   try {
     const { title, description, budget, location } = req.body;
@@ -18,7 +18,7 @@ router.post("/", authMiddleware, async (req, res) => {
       description,
       budget,
       location,
-      userId: req.user.id, // from JWT
+      userId: req.user.id, // ✅ from JWT
     });
 
     await newProject.save();
@@ -28,23 +28,49 @@ router.post("/", authMiddleware, async (req, res) => {
   }
 });
 
-// Get all projects
+// -------------------- GET ALL PROJECTS --------------------
 router.get("/", async (req, res) => {
   try {
-    const projects = await Project.find().populate("userId", "name email");
+    const projects = await Project.find().populate("userId", "username email"); // ✅ show creator details
     res.json(projects);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
 
-// Get projects by the logged-in user
+// -------------------- GET LOGGED-IN USER PROJECTS --------------------
 router.get("/my-projects", authMiddleware, async (req, res) => {
   try {
     const projects = await Project.find({ userId: req.user.id });
     res.json(projects);
   } catch (err) {
     res.status(500).json({ error: err.message });
+  }
+});
+
+// -------------------- UPDATE PROJECT --------------------
+router.put("/:id", authMiddleware, async (req, res) => {
+  try {
+    const updated = await Project.findOneAndUpdate(
+      { _id: req.params.id, userId: req.user.id }, // ✅ only allow owner to update
+      req.body,
+      { new: true }
+    );
+    if (!updated) return res.status(404).json({ error: "Project not found or unauthorized" });
+    res.json(updated);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+// -------------------- DELETE PROJECT --------------------
+router.delete("/:id", authMiddleware, async (req, res) => {
+  try {
+    const deleted = await Project.findOneAndDelete({ _id: req.params.id, userId: req.user.id });
+    if (!deleted) return res.status(404).json({ error: "Project not found or unauthorized" });
+    res.json({ message: "Project deleted" });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
   }
 });
 
