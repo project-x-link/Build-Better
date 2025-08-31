@@ -21,7 +21,7 @@ app.use(cors({
   origin: [
     "http://127.0.0.1:5500",           // Local testing
     "http://localhost:3000",           // Local React/Vite
-    "https://project-x-link.github.io" // GitHub Pages frontend
+    "https://project-x-link.github.io", // GitHub Pages frontend
     "https://build-better-f.vercel.app" 
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
